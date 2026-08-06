@@ -1,7 +1,7 @@
 'use client';
 
 import React, { forwardRef, useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import { Search, X, CornerDownLeft } from 'lucide-react';
+import { Search, X, CornerDownLeft, Command } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 import { searchEngine, type SearchSuggestion } from '@/search';
@@ -170,7 +170,7 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
           )}
           {showShortcut && !query && (
             <kbd className="text-muted-foreground bg-muted hidden items-center gap-1 rounded-md px-2 py-1 text-xs font-medium sm:inline-flex">
-              ⌘K
+              <Command className="h-3 w-3" aria-hidden="true" />K
             </kbd>
           )}
         </div>
