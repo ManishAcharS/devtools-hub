@@ -81,3 +81,35 @@ export interface ToolCategoryDefinition {
   featured: boolean;
   order: number;
 }
+
+export type CategoryAccent = 'primary' | 'blue' | 'emerald' | 'violet' | 'amber' | 'rose' | 'cyan';
+
+export interface CategorySEO {
+  title?: string;
+  description?: string;
+  keywords?: string[];
+  noIndex?: boolean;
+}
+
+export interface CategoryFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface CategoryDefinition {
+  id: string;
+  slug: string;
+  title: string;
+  shortDescription: string;
+  longDescription: string;
+  icon: string;
+  color?: CategoryAccent;
+  keywords: string[];
+  seo?: CategorySEO;
+  featuredTools: string[];
+  relatedCategories: string[];
+  featuredArticles: string[];
+  faqs: CategoryFAQ[];
+  displayOrder: number;
+  featured?: boolean;
+}

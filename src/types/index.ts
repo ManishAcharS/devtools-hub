@@ -14,6 +14,10 @@ export type {
   ToolComponentProps,
   ToolRegistryEntry,
   ToolCategoryDefinition,
+  CategoryDefinition,
+  CategoryAccent,
+  CategorySEO,
+  CategoryFAQ,
 } from './tool-framework';
 
 export interface Category {
@@ -26,6 +30,7 @@ export interface Category {
   featured: boolean;
   order: number;
   parentId?: string;
+  color?: string;
 }
 
 export interface BlogPost {

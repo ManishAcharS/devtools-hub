@@ -1,6 +1,25 @@
 export { toolDefinitions } from './tool-definitions';
 
-export { categoryDefinitions } from './category-definitions';
+export { categoryDefinitions, dynamicCategoryDefinitions } from './category-definitions';
+
+export {
+  getAllCategoryDefinitions,
+  getCategoryDefinitionBySlug,
+  getCategoryDefinitionOrThrow,
+  getAllCategorySlugs,
+  isDynamicCategory,
+  getCategoryToolCounts,
+  getCategoryTools,
+  getCategoryFeaturedTools,
+  getCategoryPopularTools,
+  getCategoryRecentlyAddedTools,
+  getRelatedCategoryDefinitions,
+  getCategoryFeaturedArticles,
+  getCategoryFaqs,
+  getCategoryStats,
+  toCategoryView,
+  type CategoryStats,
+} from './category-engine';
 
 export {
   registerCategory,

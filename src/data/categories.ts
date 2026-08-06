@@ -1,50 +1,42 @@
-import type { Category, ToolCategoryDefinition } from '@/types';
-import { getToolCountByCategory } from '@/data/tools';
-import { categoryDefinitions } from '@/registry/category-definitions';
+import type { Category } from '@/types';
+import {
+  getAllCategoryDefinitions,
+  getCategoryDefinitionBySlug,
+  getCategoryToolCounts,
+  toCategoryView,
+} from '@/registry';
 
 function withCounts(list: Category[]): Category[] {
-  const counts = getToolCountByCategory();
+  const counts = getCategoryToolCounts();
   return list.map((category) => ({
     ...category,
     toolCount: counts[category.slug] ?? 0,
   }));
 }
 
-function toCategory(definition: ToolCategoryDefinition): Category {
-  return {
-    id: definition.id,
-    slug: definition.slug,
-    name: definition.name,
-    description: definition.description,
-    icon: definition.icon,
-    toolCount: 0,
-    featured: definition.featured,
-    order: definition.order,
-  };
-}
-
-export const categories: Category[] = withCounts(categoryDefinitions.map(toCategory));
+export const categories: Category[] = withCounts(
+  getAllCategoryDefinitions().map((def) => toCategoryView(def))
+);
 
 export function getCategoryBySlug(slug: string): Category | undefined {
-  const definition = categoryDefinitions.find((category) => category.slug === slug);
-  return definition ? withCounts([toCategory(definition)])[0] : undefined;
+  const definition = getCategoryDefinitionBySlug(slug);
+  return definition ? withCounts([toCategoryView(definition)])[0] : undefined;
 }
 
 export function getFeaturedCategories(count = 6): Category[] {
   return withCounts(
-    categoryDefinitions
-      .filter((category) => category.featured)
-      .sort((a, b) => a.order - b.order)
-      .map(toCategory)
+    getAllCategoryDefinitions()
+      .filter((definition) => definition.featured)
+      .map((def) => toCategoryView(def))
   ).slice(0, count);
 }
 
 export function getAllCategories(): Category[] {
-  return withCounts([...categoryDefinitions].sort((a, b) => a.order - b.order).map(toCategory));
+  return withCounts(getAllCategoryDefinitions().map((def) => toCategoryView(def)));
 }
 
 export function getPopularCategories(count = 6): Category[] {
-  return withCounts([...categoryDefinitions].map(toCategory))
+  return withCounts(getAllCategoryDefinitions().map((def) => toCategoryView(def)))
     .sort((a, b) => b.toolCount - a.toolCount)
     .slice(0, count);
 }

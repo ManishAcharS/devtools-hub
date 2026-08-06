@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import type { ToolDefinition, BlogPost } from '@/types';
+import type { ToolDefinition, BlogPost, CategoryDefinition } from '@/types';
 import type { CategoryLike } from './related';
 import {
   SITE_URL,
@@ -153,6 +153,34 @@ export function createCategoryMetadata(category: CategoryLike, toolCount?: numbe
     canonical: `/categories/${category.slug}`,
     keywords: [category.name.toLowerCase(), 'developer tools', 'software development'],
     section: category.name,
+  });
+}
+
+export function createCategoryPageMetadata(
+  definition: CategoryDefinition,
+  toolCount?: number
+): Metadata {
+  const seo = definition.seo;
+  const title = seo?.title ?? `${definition.title} Tools`;
+  const countLabel =
+    toolCount !== undefined
+      ? ` Browse ${toolCount} curated ${definition.title.toLowerCase()} tools, compare features, and pick the right one for your workflow.`
+      : '';
+  const keywords = Array.from(
+    new Set(
+      [...(seo?.keywords ?? []), ...definition.keywords]
+        .map((keyword) => keyword.toLowerCase())
+        .filter((keyword) => keyword.length > 0)
+    )
+  );
+
+  return createMetadata({
+    title,
+    description: `${seo?.description ?? definition.shortDescription}${countLabel}`,
+    canonical: `/categories/${definition.slug}`,
+    keywords,
+    noIndex: seo?.noIndex ?? false,
+    section: definition.title,
   });
 }
 

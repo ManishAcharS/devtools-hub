@@ -1,6 +1,6 @@
 import type { ToolCategoryDefinition } from '@/types';
 import { isValidSlug } from '@/lib/tool-validation';
-import { categoryDefinitions } from '@/registry/category-definitions';
+import { categoryDefinitions, dynamicCategoryDefinitions } from '@/registry/category-definitions';
 
 const registry = new Map<string, ToolCategoryDefinition>();
 
@@ -16,6 +16,17 @@ export function registerCategory(definition: ToolCategoryDefinition): void {
 
 export function initializeCategoryRegistry(): void {
   categoryDefinitions.forEach(registerCategory);
+  dynamicCategoryDefinitions.forEach((definition) => {
+    registerCategory({
+      id: definition.id,
+      slug: definition.slug,
+      name: definition.title,
+      description: definition.shortDescription,
+      icon: definition.icon,
+      featured: definition.featured ?? false,
+      order: definition.displayOrder,
+    });
+  });
 }
 
 export function getCategoryBySlug(slug: string): ToolCategoryDefinition | undefined {

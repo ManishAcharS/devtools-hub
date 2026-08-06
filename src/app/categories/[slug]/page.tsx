@@ -1,24 +1,37 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { FolderOpen } from 'lucide-react';
 import {
-  getCategoryBySlug,
-  getCategorySlugs,
-  getToolsByCategory,
-  getToolCountByCategory,
+  getAllCategorySlugs,
+  getCategoryDefinitionBySlug,
+  getCategoryToolCounts,
+  getCategoryTools,
+  getCategoryFeaturedTools,
+  getCategoryPopularTools,
+  getCategoryRecentlyAddedTools,
+  getRelatedCategoryDefinitions,
+  getCategoryFeaturedArticles,
+  getCategoryFaqs,
+  getCategoryStats,
+  toCategoryView,
 } from '@/registry';
 import {
-  createCategoryMetadata,
-  createCategoryStructuredData,
+  createCategoryPageMetadata,
+  createCategoryPageStructuredData,
   StructuredData,
-  getRelatedCategories,
 } from '@/lib/seo';
-import { ToolCard } from '@/components/ui/tool-card';
-import { CategoryCard } from '@/components/ui/category-card';
-import { Button } from '@/components/ui/button';
-import { PageHeader } from '@/components/shared/page-header';
-import { EmptyState } from '@/components/shared/empty-state';
+import {
+  CategoryHero,
+  CategoryDescription,
+  CategoryToolGrid,
+  FeaturedTools,
+  PopularTools,
+  RecentlyAddedTools,
+  RelatedCategories,
+  CategoryFAQ,
+  EmptyCategoryState,
+  FeaturedArticles,
+} from '@/components/categories';
+import { FooterCtaSection } from '@/components/sections/footer-cta-section';
 
 interface CategoryPageProps {
   params: Promise<{ slug: string }>;
@@ -27,92 +40,76 @@ interface CategoryPageProps {
 export const dynamicParams = false;
 
 export function generateStaticParams(): { slug: string }[] {
-  return getCategorySlugs().map((slug) => ({ slug }));
+  return getAllCategorySlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const category = getCategoryBySlug(slug);
-  if (!category) return {};
-  const toolCount = getToolCountByCategory()[category.slug] ?? 0;
-  return createCategoryMetadata(category, toolCount);
+  const definition = getCategoryDefinitionBySlug(slug);
+  if (!definition) return {};
+  const toolCount = getCategoryToolCounts()[definition.slug] ?? 0;
+  return createCategoryPageMetadata(definition, toolCount);
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const { slug } = await params;
-  const category = getCategoryBySlug(slug);
+  const definition = getCategoryDefinitionBySlug(slug);
 
-  if (!category) {
+  if (!definition) {
     notFound();
   }
 
-  const tools = getToolsByCategory(category.slug);
-  const toolCount = getToolCountByCategory()[category.slug] ?? 0;
-  const relatedCategories = getRelatedCategories(category, 3);
+  const counts = getCategoryToolCounts();
+  const view = toCategoryView(definition, counts);
+  const stats = getCategoryStats(definition);
+  const tools = getCategoryTools(definition);
+  const featured = getCategoryFeaturedTools(definition, 4);
+  const popular = getCategoryPopularTools(definition, 6);
+  const recent = getCategoryRecentlyAddedTools(definition, 4);
+  const related = getRelatedCategoryDefinitions(definition, 3).map((relatedDefinition) =>
+    toCategoryView(relatedDefinition, counts)
+  );
+  const articles = getCategoryFeaturedArticles(definition, 3);
+  const faqs = getCategoryFaqs(definition);
+
+  const showCuratedSections = tools.length >= 3;
 
   return (
     <>
-      <StructuredData data={createCategoryStructuredData(category, tools)} />
+      <StructuredData data={createCategoryPageStructuredData(view, tools, faqs)} />
       <div className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 lg:px-8">
-        <PageHeader
-          icon={<FolderOpen className="h-6 w-6" aria-hidden="true" />}
-          title={`${category.name} Tools`}
-          description={category.description}
+        <CategoryHero
+          title={definition.title}
+          shortDescription={definition.shortDescription}
+          icon={definition.icon}
+          color={definition.color}
+          stats={stats}
           breadcrumb={[
             { label: 'Categories', href: '/categories' },
-            { label: category.name, current: true },
+            { label: definition.title, current: true },
           ]}
-          actions={
-            <span className="text-muted-foreground bg-muted rounded-full px-3 py-1 text-sm font-medium">
-              {toolCount} {toolCount === 1 ? 'tool' : 'tools'}
-            </span>
-          }
         />
 
-        {tools.length === 0 ? (
-          <EmptyState
-            icon="tools"
-            title={`No ${category.name} tools yet`}
-            description="Tools in this category are being added. Check back soon or explore other categories."
-            action={
-              <Button variant="outline" asChild>
-                <Link href="/tools">Browse all tools</Link>
-              </Button>
-            }
+        <CategoryDescription longDescription={definition.longDescription} />
+
+        {tools.length > 0 ? (
+          <CategoryToolGrid
+            tools={tools}
+            title={`All ${definition.title} tools (${tools.length})`}
           />
         ) : (
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {tools.map((tool) => (
-              <Link
-                key={tool.slug}
-                href={`/tools/${tool.slug}`}
-                className="group focus-visible:ring-ring rounded-xl focus-visible:ring-2 focus-visible:outline-none"
-              >
-                <ToolCard tool={tool} />
-              </Link>
-            ))}
-          </div>
+          <EmptyCategoryState icon={definition.icon} color={definition.color} />
         )}
 
-        {relatedCategories.length > 0 && (
-          <section aria-label={`Related categories`} className="mt-14">
-            <h2 className="text-2xl font-bold tracking-tight">Related categories</h2>
-            <p className="text-muted-foreground mt-2 mb-6">
-              Explore more tools across similar disciplines.
-            </p>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedCategories.map((related) => (
-                <Link
-                  key={related.id}
-                  href={`/categories/${related.slug}`}
-                  className="focus-visible:ring-ring rounded-xl focus-visible:ring-2 focus-visible:outline-none"
-                >
-                  <CategoryCard category={related} />
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
+        {showCuratedSections && featured.length > 0 && <FeaturedTools tools={featured} />}
+        {showCuratedSections && popular.length > 0 && <PopularTools tools={popular} />}
+        {showCuratedSections && recent.length > 0 && <RecentlyAddedTools tools={recent} />}
+
+        {related.length > 0 && <RelatedCategories categories={related} />}
+        {articles.length > 0 && <FeaturedArticles articles={articles} />}
+        {faqs.length > 0 && <CategoryFAQ faqs={faqs} />}
+
+        <FooterCtaSection />
       </div>
     </>
   );

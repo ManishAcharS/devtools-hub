@@ -149,6 +149,18 @@ export function createCategoryStructuredData(
   ];
 }
 
+export function createCategoryPageStructuredData(
+  category: CategoryLike,
+  tools: Array<Pick<ToolDefinition, 'title' | 'slug'>>,
+  faqs: Array<{ question: string; answer: string }> = []
+): JsonLd[] {
+  const scripts: JsonLd[] = createCategoryStructuredData(category, tools);
+  if (faqs.length > 0) {
+    scripts.push(createFAQStructuredData(faqs));
+  }
+  return scripts;
+}
+
 export function createArticleStructuredData(post: BlogPost): JsonLd {
   return {
     '@context': 'https://schema.org',
