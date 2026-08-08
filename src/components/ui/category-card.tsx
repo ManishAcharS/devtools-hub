@@ -71,6 +71,7 @@ export const categoryIcons: Record<string, LucideIcon> = {
   'date-time': CalendarClock,
   numbers: Calculator,
   programming: Code,
+  web: Globe,
 };
 
 export function getCategoryIcon(slug: string): LucideIcon {

@@ -9,6 +9,7 @@ import {
 } from '@/registry';
 import { StructuredData } from '@/lib/seo';
 import { ToolLayout } from '@/components/tools/tool-layout';
+import { ToolContent } from '@/components/tools/tool-content';
 
 interface ToolPageProps {
   params: Promise<{ slug: string }>;
@@ -43,7 +44,11 @@ export default async function ToolPage({ params }: ToolPageProps) {
   return (
     <>
       <StructuredData data={generateToolStructuredData(definition)} />
-      <ToolLayout definition={definition} relatedTools={relatedTools} />
+      <ToolLayout
+        definition={definition}
+        relatedTools={relatedTools}
+        content={<ToolContent definition={definition} component={entry.component} />}
+      />
     </>
   );
 }

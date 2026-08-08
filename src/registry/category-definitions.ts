@@ -679,4 +679,40 @@ export const dynamicCategoryDefinitions: CategoryDefinition[] = [
     ],
     displayOrder: 29,
   },
+  {
+    id: 'cat-web',
+    slug: 'web',
+    title: 'Web',
+    shortDescription: 'URL, query string, and HTTP utilities for everyday web development.',
+    longDescription:
+      'The building blocks of the web — URLs, query strings, HTTP semantics, and browser identity — demystified. Parse URLs into their parts, build them back up, decode query strings, and explore every HTTP status code.',
+    icon: 'globe',
+    color: 'cyan',
+    keywords: ['web', 'url', 'query string', 'http', 'headers', 'user agent'],
+    seo: {
+      keywords: [
+        'url parser',
+        'url builder',
+        'query string parser',
+        'http status codes',
+        'user agent parser',
+      ],
+    },
+    featuredTools: [],
+    relatedCategories: ['network', 'encoding', 'regex', 'security-tools'],
+    featuredArticles: [],
+    faqs: [
+      {
+        question: 'What is a URL exactly?',
+        answer:
+          'A URL (Uniform Resource Locator) identifies a resource on the web. It decomposes into scheme, authority (host and port), path, query string, and fragment — each with its own encoding rules.',
+      },
+      {
+        question: 'What is the difference between URL encoding and decoding?',
+        answer:
+          'Encoding replaces unsafe characters with percent sequences so data can travel in URLs; decoding reverses that. Query string parsers do both so you can read and edit parameters safely.',
+      },
+    ],
+    displayOrder: 30,
+  },
 ];

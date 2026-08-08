@@ -7,6 +7,7 @@ import {
 } from '@/lib/tool-validation';
 import { categoryExists, getCategorySlugs } from '@/registry/category-registry';
 import { toolDefinitions } from '@/registry/tool-definitions';
+import { toolComponents } from '@/registry/tool-components';
 
 const registry = new Map<string, ToolRegistryEntry>();
 
@@ -182,4 +183,9 @@ export function getToolsByCategoryExists(categorySlug: string): boolean {
   return categoryExists(categorySlug);
 }
 
-registerTools(toolDefinitions.map((definition) => ({ definition })));
+registerTools(
+  toolDefinitions.map((definition) => ({
+    definition,
+    component: toolComponents[definition.slug],
+  }))
+);
