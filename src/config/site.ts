@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
   url: 'https://toolboxfordevs.vercel.app',
   ogImage: '/og-image.png',
   links: {
-    github: 'https://github.com/manishthelegend99/toolboxfordevs',
+    github: 'https://github.com/ManishAcharS/toolboxfordevs',
   },
   author: {
     name: 'Toolbox for Devs Team',
@@ -232,7 +232,7 @@ export const footerNavigation = {
   social: [
     {
       label: 'GitHub',
-      href: 'https://github.com/manishthelegend99/toolboxfordevs',
+      href: 'https://github.com/ManishAcharS/toolboxfordevs',
       external: true,
     },
   ],

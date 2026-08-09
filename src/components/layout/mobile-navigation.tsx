@@ -160,7 +160,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ open, onClose }) =>
               Search
             </Link>
             <a
-              href="https://github.com/manishthelegend99/toolboxfordevs"
+              href="https://github.com/ManishAcharS/toolboxfordevs"
               target="_blank"
               rel="noopener noreferrer"
               className="hover-glow text-muted-foreground hover:bg-muted hover:text-foreground flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-colors"
