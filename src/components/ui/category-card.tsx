@@ -30,6 +30,9 @@ import {
   CalendarClock,
   Calculator,
   Code,
+  Brush,
+  Accessibility,
+  Dices,
   type LucideIcon,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -72,6 +75,9 @@ export const categoryIcons: Record<string, LucideIcon> = {
   numbers: Calculator,
   programming: Code,
   web: Globe,
+  css: Brush,
+  accessibility: Accessibility,
+  generators: Dices,
 };
 
 export function getCategoryIcon(slug: string): LucideIcon {

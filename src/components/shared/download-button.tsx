@@ -4,13 +4,10 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { Download, CheckCircle2, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-interface DownloadButtonProps extends Omit<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  'children' | 'onClick'
-> {
+interface DownloadButtonProps {
   url?: string;
   fileName?: string;
-  content?: string;
+  content?: string | Uint8Array | ArrayBuffer | Blob;
   contentType?: string;
   label?: string;
   downloadingLabel?: string;
@@ -18,6 +15,10 @@ interface DownloadButtonProps extends Omit<
   variant?: 'default' | 'outline' | 'ghost' | 'success';
   size?: 'sm' | 'md' | 'lg';
   iconOnly?: boolean;
+  className?: string;
+  disabled?: boolean;
+  onClick?: never;
+  children?: never;
 }
 
 const DownloadButton: React.FC<DownloadButtonProps> = ({
@@ -32,6 +33,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({
   size = 'md',
   iconOnly = false,
   className,
+  disabled = false,
   ...props
 }) => {
   const [state, setState] = useState<'idle' | 'downloading' | 'downloaded'>('idle');
@@ -53,7 +55,15 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({
       let blobUrl: string;
 
       if (content !== undefined) {
-        const blob = new Blob([content], { type: contentType });
+        let blobPart: BlobPart;
+        if (content instanceof Uint8Array) {
+          blobPart = content.buffer.slice(0) as ArrayBuffer;
+        } else if (content instanceof ArrayBuffer) {
+          blobPart = content;
+        } else {
+          blobPart = content;
+        }
+        const blob = new Blob([blobPart], { type: contentType });
         blobUrl = URL.createObjectURL(blob);
       } else if (url) {
         const response = await fetch(url);
@@ -112,7 +122,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({
     <button
       type="button"
       onClick={handleDownload}
-      disabled={state === 'downloading'}
+      disabled={state === 'downloading' || disabled}
       className={cn(
         'focus-visible:ring-ring inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-70',
         variantClasses[variant],

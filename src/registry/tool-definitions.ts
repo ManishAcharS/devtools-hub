@@ -4145,7 +4145,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Re-indent and pretty-print any JSON document into a clean, readable structure with configurable indentation, or minify it down to a single line — fully in your browser.',
     shortDescription: 'Pretty-print or minify JSON with configurable indentation.',
-    category: 'web',
+    category: 'json',
     keywords: [
       'json formatter',
       'pretty print json',
@@ -4199,7 +4199,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Strip all unnecessary whitespace from JSON to produce the smallest valid document — ideal for embedding payloads, caching keys, or saving bandwidth on the wire.',
     shortDescription: 'Compress JSON into the smallest valid form.',
-    category: 'web',
+    category: 'json',
     keywords: [
       'json minifier',
       'minify json',
@@ -4253,7 +4253,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Check that your JSON is syntactically valid and find exactly where it breaks. Errors are reported with the line and column of the problem, so malformed documents are quick to fix.',
     shortDescription: 'Validate JSON and locate syntax errors by line and column.',
-    category: 'web',
+    category: 'json',
     keywords: [
       'json validator',
       'validate json',
@@ -4306,7 +4306,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Convert any text between camelCase, PascalCase, snake_case, kebab-case, SCREAMING_SNAKE_CASE, and more. Words are detected from separators and camelCase boundaries automatically.',
     shortDescription: 'Convert text between camelCase, snake_case, kebab-case, and more.',
-    category: 'programming',
+    category: 'text',
     keywords: [
       'case converter',
       'camel case',
@@ -4361,7 +4361,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Count characters (with or without spaces), words, lines, sentences, and UTF-8 bytes in any text, with estimated reading and speaking times for your content.',
     shortDescription: 'Count characters, words, lines, sentences, and bytes.',
-    category: 'productivity',
+    category: 'text',
     keywords: [
       'character counter',
       'word counter',
@@ -4416,7 +4416,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Compare two texts and see exactly what changed, line by line or word by word. Additions and removals are highlighted inline, with counts of what was added and removed.',
     shortDescription: 'Compare two texts and highlight the differences.',
-    category: 'programming',
+    category: 'text',
     keywords: [
       'text diff',
       'compare text',
@@ -4470,7 +4470,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Convert colors between HEX, HEX8, RGB, HSL, and HSV formats with instant live preview, plus tints and shades for building palettes — all offline.',
     shortDescription: 'Convert colors between HEX, RGB, HSL, and HSV.',
-    category: 'design',
+    category: 'color',
     keywords: [
       'color converter',
       'hex to rgb',
@@ -4525,7 +4525,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Generate a harmonious palette of shades, tints, and accents from a single base color. Copy individual hex codes or the whole palette with one click.',
     shortDescription: 'Generate a palette of shades and tints from one base color.',
-    category: 'design',
+    category: 'color',
     keywords: [
       'color palette generator',
       'palette generator',
@@ -4580,7 +4580,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Measure the WCAG contrast ratio between two colors and see whether your text passes accessibility guidelines for normal and large text.',
     shortDescription: 'Check WCAG contrast ratios between two colors.',
-    category: 'design',
+    category: 'color',
     keywords: [
       'color contrast checker',
       'contrast ratio',
@@ -4635,7 +4635,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Inspect any PDF’s page count, PDF version, document metadata (title, author, producer, dates), and structure — everything is read locally in your browser.',
     shortDescription: 'Read a PDF’s pages, version, and metadata.',
-    category: 'web',
+    category: 'pdf',
     keywords: [
       'pdf info',
       'pdf metadata',
@@ -4689,7 +4689,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Extract all selectable text from a PDF, page by page, and download it as a plain text file — entirely in your browser with no upload.',
     shortDescription: 'Extract text from PDFs page by page.',
-    category: 'web',
+    category: 'pdf',
     keywords: [
       'pdf text extractor',
       'extract text from pdf',
@@ -4742,7 +4742,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Render every page of a PDF as a high-quality JPEG image at your chosen scale, then download pages individually or all at once — locally, with no upload.',
     shortDescription: 'Convert PDF pages to JPEG images.',
-    category: 'web',
+    category: 'pdf',
     keywords: [
       'pdf to image',
       'pdf pages to jpeg',
@@ -4796,7 +4796,7 @@ figma.ui.onmessage = (msg: { type: string }) => {
     description:
       'Combine PNG, JPEG, and WebP images into a single PDF in the order you add them — reorder, remove, and download entirely in your browser.',
     shortDescription: 'Combine images into a single PDF.',
-    category: 'web',
+    category: 'pdf',
     keywords: [
       'images to pdf',
       'jpg to pdf',
@@ -4842,5 +4842,2638 @@ figma.ui.onmessage = (msg: { type: string }) => {
     relatedTools: ['pdf-pages-to-images', 'pdf-info', 'image-format-converter'],
     createdAt: '2026-08-08T00:00:00.000Z',
     updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-text-reverser',
+    slug: 'text-reverser',
+    title: 'Text Reverser',
+    description: 'Reverse characters, words, or lines of any text instantly in your browser.',
+    shortDescription: 'Reverse characters, words, or lines in text.',
+    category: 'text',
+    keywords: ['reverse text', 'text reverser', 'reverse words', 'reverse lines', 'backward text'],
+    tags: ['text', 'utility', 'formatter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Does it reverse unicode?',
+        answer: 'Yes, character reversal handles standard UTF-8 strings correctly.',
+      },
+    ],
+    examples: [{ title: 'Reverse words', code: 'hello world -> world hello', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-whitespace-remover',
+    slug: 'whitespace-remover',
+    title: 'Whitespace Remover',
+    description: 'Strip spaces, tabs, and line breaks or tidy messy whitespace quickly.',
+    shortDescription: 'Remove or clean up whitespace and line breaks.',
+    category: 'text',
+    keywords: ['remove whitespace', 'strip spaces', 'trim lines', 'collapse spaces'],
+    tags: ['text', 'utility', 'formatter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Can I keep line breaks?',
+        answer: 'Yes, you can choose to remove only extra spaces while preserving newlines.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Collapse spaces',
+        code: 'too   many    spaces -> too many spaces',
+        language: 'text',
+      },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-find-replace',
+    slug: 'find-replace',
+    title: 'Find & Replace',
+    description:
+      'Find and replace occurrences in text with case sensitivity and regular expression support.',
+    shortDescription: 'Find and replace text with regex and case options.',
+    category: 'text',
+    keywords: ['find and replace', 'search and replace', 'regex replace'],
+    tags: ['text', 'utility', 'regex'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Does it support regex?',
+        answer: 'Yes, toggle regular expression mode for advanced pattern matching.',
+      },
+    ],
+    examples: [{ title: 'Replace word', code: 'foo bar -> baz bar', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-keyword-density-checker',
+    slug: 'keyword-density-checker',
+    title: 'Keyword Density Checker',
+    description: 'Analyze keyword frequency and density percentage in text for SEO optimization.',
+    shortDescription: 'Check keyword frequency and density in text.',
+    category: 'web',
+    keywords: ['keyword density', 'seo keyword checker', 'word frequency'],
+    tags: ['seo', 'text', 'web'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What is ideal density?',
+        answer: 'Typically 1% to 2% is a common guideline for SEO.',
+      },
+    ],
+    examples: [
+      { title: 'Count keywords', code: 'seo text analysis -> frequency counts', language: 'text' },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-password-strength-checker',
+    slug: 'password-strength-checker',
+    title: 'Password Strength Checker',
+    description:
+      'Score password strength against length, variety, common patterns, and estimated crack time.',
+    shortDescription: 'Score password strength and entropy.',
+    category: 'security-tools',
+    keywords: ['password strength', 'password checker', 'entropy calculator', 'crack time'],
+    tags: ['security', 'password', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Is my password sent anywhere?',
+        answer: 'No, all checks happen entirely in your browser.',
+      },
+    ],
+    examples: [
+      { title: 'Check strength', code: 'correct horse battery staple -> strong', language: 'text' },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-prime-number-checker',
+    slug: 'prime-number-checker',
+    title: 'Prime Number Checker',
+    description: 'Test any whole number for primality and view its prime factorization.',
+    shortDescription: 'Test primality and find prime factors.',
+    category: 'numbers',
+    keywords: ['prime number checker', 'isPrime', 'prime factors'],
+    tags: ['math', 'numbers', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What is a prime number?',
+        answer: 'A whole number greater than 1 whose only divisors are 1 and itself.',
+      },
+    ],
+    examples: [{ title: 'Check 97', code: '97 is prime', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-gcd-lcm-calculator',
+    slug: 'gcd-lcm-calculator',
+    title: 'GCD & LCM Calculator',
+    description:
+      'Calculate the greatest common divisor and least common multiple for any set of numbers.',
+    shortDescription: 'Calculate GCD and LCM for numbers.',
+    category: 'numbers',
+    keywords: [
+      'gcd calculator',
+      'lcm calculator',
+      'greatest common divisor',
+      'least common multiple',
+    ],
+    tags: ['math', 'numbers', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How many numbers can I input?',
+        answer: 'Any number of values separated by commas or spaces.',
+      },
+    ],
+    examples: [{ title: 'GCD of 12, 18', code: 'GCD(12, 18) = 6', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-unit-converter',
+    slug: 'unit-converter',
+    title: 'Unit Converter',
+    description:
+      'Convert between length, weight, data size, temperature, and speed units instantly.',
+    shortDescription: 'Convert units for length, weight, data size, and temperature.',
+    category: 'numbers',
+    keywords: ['unit converter', 'length converter', 'weight converter', 'data size converter'],
+    tags: ['converter', 'utility', 'math'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which units are supported?',
+        answer: 'Metric, imperial, SI and binary data sizes, temperature scales, and speed.',
+      },
+    ],
+    examples: [{ title: 'Convert meters', code: '1 mile = 1609.34 meters', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-age-calculator',
+    slug: 'age-calculator',
+    title: 'Age Calculator',
+    description:
+      'Calculate exact age in years, months, days, and totals in weeks, days, and hours.',
+    shortDescription: 'Calculate exact age from birth date.',
+    category: 'date-time',
+    keywords: ['age calculator', 'calculate age', 'date difference years'],
+    tags: ['date', 'time', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Does it account for leap years?',
+        answer: 'Yes, precise calendar arithmetic is used.',
+      },
+    ],
+    examples: [
+      { title: 'Calculate age', code: 'Birth date -> Years, months, days', language: 'text' },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-working-days-calculator',
+    slug: 'working-days-calculator',
+    title: 'Working Days Calculator',
+    description: 'Count working days between two dates, excluding weekends and holidays.',
+    shortDescription: 'Count working days and business days between dates.',
+    category: 'date-time',
+    keywords: ['working days calculator', 'business days calculator', 'exclude weekends'],
+    tags: ['date', 'time', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      { question: 'Are weekends excluded?', answer: 'Yes, Saturdays and Sundays can be excluded.' },
+    ],
+    examples: [
+      {
+        title: 'Working days',
+        code: 'Start date to end date -> working days count',
+        language: 'text',
+      },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-iso-8601-converter',
+    slug: 'iso-8601-converter',
+    title: 'ISO 8601 Converter',
+    description:
+      'Parse and convert ISO 8601 strings into UTC, local, epoch, and human-readable formats.',
+    shortDescription: 'Parse and format ISO 8601 date strings.',
+    category: 'date-time',
+    keywords: ['iso 8601 converter', 'parse iso date', 'utc date format'],
+    tags: ['date', 'time', 'converter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What formats are parsed?',
+        answer: 'Standard ISO 8601, date-only, offset times, and basic timestamps.',
+      },
+    ],
+    examples: [
+      { title: 'Parse ISO', code: '2026-08-08T10:30:00Z -> UTC & local', language: 'text' },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-countdown-timer',
+    slug: 'countdown-timer',
+    title: 'Countdown Timer',
+    description:
+      'Set a target date and time and start a live countdown timer in days, hours, minutes, and seconds.',
+    shortDescription: 'Live countdown timer to any date.',
+    category: 'date-time',
+    keywords: ['countdown timer', 'countdown to date', 'timer'],
+    tags: ['date', 'time', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      { question: 'Can I pause?', answer: 'Yes, start, pause, and reset controls are included.' },
+    ],
+    examples: [
+      { title: 'Countdown', code: 'Target date -> days:hours:mins:secs', language: 'text' },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-json-to-xml',
+    slug: 'json-to-xml',
+    title: 'JSON to XML Converter',
+    description:
+      'Convert JSON payloads into well-formed XML with configurable root and array item tags.',
+    shortDescription: 'Convert JSON documents to XML.',
+    category: 'xml',
+    keywords: ['json to xml', 'convert json to xml', 'json xml converter'],
+    tags: ['xml', 'json', 'converter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How are arrays handled?',
+        answer: 'Arrays are mapped to repeating element names.',
+      },
+    ],
+    examples: [
+      { title: 'Convert JSON', code: '{"a":1} -> <root><a>1</a></root>', language: 'xml' },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-code-formatter',
+    slug: 'code-formatter',
+    title: 'Code Formatter (JS/CSS/HTML)',
+    description: 'Format or minify JavaScript, CSS, and HTML code with js-beautify.',
+    shortDescription: 'Beautify or minify JavaScript, CSS, and HTML.',
+    category: 'programming',
+    keywords: [
+      'code formatter',
+      'js beautifier',
+      'css beautifier',
+      'html formatter',
+      'minify code',
+    ],
+    tags: ['programming', 'formatter', 'web'],
+    pricing: 'free',
+    featured: true,
+    faqs: [{ question: 'What library is used?', answer: 'Powered by js-beautify.' }],
+    examples: [{ title: 'Format JS', code: 'const x=1; -> const x = 1;', language: 'javascript' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-gitignore-generator',
+    slug: 'gitignore-generator',
+    title: '.gitignore Generator',
+    description:
+      'Combine standard templates for Node, Python, Rust, Go, VS Code, and more into a custom .gitignore.',
+    shortDescription: 'Generate .gitignore files from standard templates.',
+    category: 'productivity',
+    keywords: ['gitignore generator', 'create gitignore', 'git ignore templates'],
+    tags: ['git', 'productivity', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Can I combine templates?',
+        answer: 'Yes, select multiple templates and add custom rules.',
+      },
+    ],
+    examples: [{ title: 'Node template', code: 'node_modules/\ndist/', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-readme-generator',
+    slug: 'readme-generator',
+    title: 'README Generator',
+    description:
+      'Create professional README.md files with title, badges, installation, and usage instructions.',
+    shortDescription: 'Generate professional README.md files.',
+    category: 'productivity',
+    keywords: ['readme generator', 'create readme', 'markdown readme builder'],
+    tags: ['markdown', 'productivity', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [{ question: 'Can I download the file?', answer: 'Yes, download README.md instantly.' }],
+    examples: [{ title: 'README', code: '# Title\n\nDescription', language: 'markdown' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-license-generator',
+    slug: 'license-generator',
+    title: 'License Generator',
+    description:
+      'Generate standard open-source licenses (MIT, Apache 2.0, GPL 3.0, BSD, ISC) pre-filled with author and year.',
+    shortDescription: 'Generate open-source license files (MIT, Apache, etc.).',
+    category: 'productivity',
+    keywords: ['license generator', 'mit license', 'apache license', 'open source license'],
+    tags: ['productivity', 'utility', 'legal'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which licenses are available?',
+        answer: 'MIT, Apache 2.0, GPL 3.0, BSD 3-Clause, and ISC.',
+      },
+    ],
+    examples: [{ title: 'MIT', code: 'MIT License\nCopyright (c) 2026 Author', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-cron-generator',
+    slug: 'cron-generator',
+    title: 'Cron Expression Generator',
+    description:
+      'Build and parse cron expressions with visual field editors and human-readable descriptions.',
+    shortDescription: 'Generate and parse cron expressions.',
+    category: 'productivity',
+    keywords: ['cron generator', 'cron expression parser', 'crontab builder'],
+    tags: ['productivity', 'utility', 'devops'],
+    pricing: 'free',
+    featured: false,
+    faqs: [{ question: 'How many fields?', answer: 'Standard 5-field cron syntax.' }],
+    examples: [{ title: 'Every day at noon', code: '0 12 * * *', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-gradient-generator',
+    slug: 'gradient-generator',
+    title: 'CSS Gradient Generator',
+    description: 'Design linear, radial, and conic gradients with color stops and angle controls.',
+    shortDescription: 'Generate CSS gradients visually.',
+    category: 'color',
+    keywords: ['css gradient generator', 'linear gradient', 'radial gradient', 'conic gradient'],
+    tags: ['css', 'design', 'color'],
+    pricing: 'free',
+    featured: false,
+    faqs: [{ question: 'Can I add multiple stops?', answer: 'Yes, add up to 10 color stops.' }],
+    examples: [
+      {
+        title: 'Linear',
+        code: 'linear-gradient(90deg, #3b82f6 0%, #ec4899 100%)',
+        language: 'css',
+      },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-box-shadow-generator',
+    slug: 'box-shadow-generator',
+    title: 'Box Shadow Generator',
+    description: 'Design CSS box shadows with offset, blur, spread, color, and inset controls.',
+    shortDescription: 'Generate CSS box shadows visually.',
+    category: 'color',
+    keywords: ['box shadow generator', 'css shadow', 'drop shadow'],
+    tags: ['css', 'design', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [{ question: 'Can I use inset shadows?', answer: 'Yes, toggle the inset option.' }],
+    examples: [{ title: 'Shadow', code: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', language: 'css' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-border-radius-generator',
+    slug: 'border-radius-generator',
+    title: 'Border Radius Generator',
+    description: 'Generate CSS border-radius rules with individual corner control and presets.',
+    shortDescription: 'Generate CSS border radius visually.',
+    category: 'color',
+    keywords: ['border radius generator', 'rounded corners css'],
+    tags: ['css', 'design', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Can I link corners?',
+        answer: 'Yes, link all corners together or edit individually.',
+      },
+    ],
+    examples: [{ title: 'Radius', code: '8px', language: 'css' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-clip-path-generator',
+    slug: 'clip-path-generator',
+    title: 'CSS Clip-Path Generator',
+    description: 'Create polygon, circle, ellipse, and inset clip paths with presets and preview.',
+    shortDescription: 'Generate CSS clip-path shapes.',
+    category: 'color',
+    keywords: ['clip path generator', 'css polygon shape', 'clip-path'],
+    tags: ['css', 'design', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      { question: 'What shapes are supported?', answer: 'Polygon, circle, ellipse, and inset.' },
+    ],
+    examples: [{ title: 'Polygon', code: 'polygon(50% 0%, 100% 100%, 0% 100%)', language: 'css' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-px-rem-converter',
+    slug: 'px-rem-converter',
+    title: 'px ↔ rem Converter',
+    description: 'Convert between pixels and rem units with configurable base font size.',
+    shortDescription: 'Convert between px and rem units.',
+    category: 'color',
+    keywords: ['px to rem', 'rem to px', 'pixel rem converter'],
+    tags: ['css', 'converter', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [{ question: 'What is default base size?', answer: 'Typically 16px.' }],
+    examples: [{ title: 'Convert', code: '16px = 1rem', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-color-blindness-simulator',
+    slug: 'color-blindness-simulator',
+    title: 'Color Blindness Simulator',
+    description:
+      'Simulate protanopia, deuteranopia, tritanopia, and achromatopsia on colors and palettes.',
+    shortDescription: 'Simulate color vision deficiencies.',
+    category: 'color',
+    keywords: ['color blindness simulator', 'protanopia', 'deuteranopia', 'accessibility color'],
+    tags: ['color', 'accessibility', 'design'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which deficiencies are simulated?',
+        answer: 'Protanopia, deuteranopia, tritanopia, and achromatopsia.',
+      },
+    ],
+    examples: [
+      { title: 'Simulate', code: 'Hex color -> color blindness variants', language: 'text' },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-favicon-generator',
+    slug: 'favicon-generator',
+    title: 'Favicon Generator',
+    description:
+      'Generate favicon sizes (16x16 to 512x512) and multi-resolution ICO files from images.',
+    shortDescription: 'Generate favicons and ICO files from images.',
+    category: 'images',
+    keywords: ['favicon generator', 'generate favicon', 'ico generator'],
+    tags: ['images', 'web', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [{ question: 'What formats are output?', answer: 'PNG sizes and multi-resolution ICO.' }],
+    examples: [{ title: 'Generate', code: 'image.png -> favicon sizes', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-meta-tag-generator',
+    slug: 'meta-tag-generator',
+    title: 'Meta Tag Generator',
+    description: 'Generate complete HTML meta tags for SEO, Open Graph, and Twitter Cards.',
+    shortDescription: 'Generate HTML meta tags for SEO and social sharing.',
+    category: 'web',
+    keywords: ['meta tag generator', 'seo meta tags', 'open graph generator'],
+    tags: ['seo', 'web', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What tags are included?',
+        answer: 'Title, description, canonical, robots, OG tags, and Twitter cards.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Generate tags',
+        code: '<title>...</title>\n<meta name="description" ...>',
+        language: 'html',
+      },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-open-graph-preview',
+    slug: 'open-graph-preview',
+    title: 'Open Graph Preview',
+    description:
+      'Preview how web pages look when shared on social media by parsing Open Graph tags.',
+    shortDescription: 'Preview social media sharing cards from OG tags.',
+    category: 'web',
+    keywords: ['open graph preview', 'og preview tool', 'social card preview'],
+    tags: ['seo', 'web', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How does it work?',
+        answer: 'Extracts og:title, og:description, and og:image from HTML.',
+      },
+    ],
+    examples: [{ title: 'Preview', code: 'HTML -> Social card preview', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-robots-txt-generator',
+    slug: 'robots-txt-generator',
+    title: 'Robots.txt Generator',
+    description:
+      'Create robots.txt files with user-agent, allow/disallow rules, sitemap, and crawl delay.',
+    shortDescription: 'Generate robots.txt files for search engines.',
+    category: 'web',
+    keywords: ['robots.txt generator', 'create robots txt', 'crawler rules'],
+    tags: ['seo', 'web', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Can I add multiple rules?',
+        answer: 'Yes, add multiple allow and disallow paths.',
+      },
+    ],
+    examples: [{ title: 'Robots', code: 'User-agent: *\nDisallow: /admin/', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-sitemap-generator',
+    slug: 'sitemap-generator',
+    title: 'Sitemap.xml Generator',
+    description:
+      'Create standards-compliant sitemap.xml files with URLs, lastmod, changefreq, and priority.',
+    shortDescription: 'Generate sitemap.xml files for websites.',
+    category: 'web',
+    keywords: ['sitemap generator', 'sitemap.xml builder', 'xml sitemap'],
+    tags: ['seo', 'web', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What attributes are supported?',
+        answer: 'loc, lastmod, changefreq, and priority.',
+      },
+    ],
+    examples: [
+      { title: 'Sitemap', code: '<?xml version="1.0"?>\n<urlset>...</urlset>', language: 'xml' },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-htaccess-generator',
+    slug: 'htaccess-generator',
+    title: '.htaccess Generator',
+    description:
+      'Generate Apache .htaccess rules for HTTPS enforcement, www redirects, and custom rules.',
+    shortDescription: 'Generate Apache .htaccess configuration files.',
+    category: 'infrastructure',
+    keywords: ['htaccess generator', 'apache htaccess', 'force https redirect'],
+    tags: ['devops', 'infrastructure', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      { question: 'Does it support www redirects?', answer: 'Yes, add or remove www prefix.' },
+    ],
+    examples: [
+      { title: 'HTTPS', code: 'RewriteEngine On\nRewriteCond %{HTTPS} off...', language: 'apache' },
+    ],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-what-is-my-ip',
+    slug: 'what-is-my-ip',
+    title: "What's My IP",
+    description: 'View your public IP address, location, ISP, timezone, and network details.',
+    shortDescription: 'Check your public IP address and network info.',
+    category: 'network',
+    keywords: ["what's my ip", 'my ip address', 'ip lookup', 'geo ip'],
+    tags: ['network', 'utility', 'web'],
+    pricing: 'free',
+    featured: true,
+    faqs: [
+      {
+        question: 'Is my IP stored?',
+        answer: 'Only in your local browser history for quick reference.',
+      },
+    ],
+    examples: [{ title: 'IP', code: '192.0.2.1 -> City, Country, ISP', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-svg-optimizer',
+    slug: 'svg-optimizer',
+    title: 'SVG Optimizer',
+    description:
+      'Minify SVG code by stripping comments, whitespace, metadata, and redundant attributes.',
+    shortDescription: 'Optimize and minify SVG files.',
+    category: 'images',
+    keywords: ['svg optimizer', 'minify svg', 'clean svg code'],
+    tags: ['svg', 'images', 'formatter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Can I preview the result?',
+        answer: 'Yes, live visual preview of the optimized SVG.',
+      },
+    ],
+    examples: [{ title: 'Optimize', code: '<svg>...</svg> -> minified svg', language: 'xml' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-csv-to-excel',
+    slug: 'csv-to-excel',
+    title: 'CSV to Excel Converter',
+    description:
+      'Convert CSV data into Excel (.xlsx) spreadsheet files with automatic type detection.',
+    shortDescription: 'Convert CSV files to Excel (.xlsx).',
+    category: 'csv',
+    keywords: ['csv to excel', 'convert csv to xlsx', 'csv spreadsheet converter'],
+    tags: ['csv', 'excel', 'converter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [{ question: 'What file format is output?', answer: 'Standard Excel .xlsx format.' }],
+    examples: [{ title: 'Convert', code: 'data.csv -> data.xlsx', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-excel-to-csv',
+    slug: 'excel-to-csv',
+    title: 'Excel to CSV Converter',
+    description:
+      'Convert Excel (.xlsx, .xls) spreadsheets to CSV format with sheet selection and delimiters.',
+    shortDescription: 'Convert Excel spreadsheets to CSV.',
+    category: 'csv',
+    keywords: ['excel to csv', 'xlsx to csv', 'convert excel file'],
+    tags: ['excel', 'csv', 'converter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Can I choose sheets?',
+        answer: 'Yes, select any sheet from multi-sheet workbooks.',
+      },
+    ],
+    examples: [{ title: 'Convert', code: 'data.xlsx -> data.csv', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-bcrypt-generator',
+    slug: 'bcrypt-generator',
+    title: 'Bcrypt Hash Generator & Checker',
+    description:
+      'Generate secure bcrypt password hashes with adjustable cost factor and verify passwords.',
+    shortDescription: 'Generate and verify bcrypt password hashes.',
+    category: 'security-tools',
+    keywords: ['bcrypt generator', 'bcrypt hash', 'password hash verifier'],
+    tags: ['security', 'password', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      { question: 'What is the cost factor?', answer: 'Controls hashing CPU cost (4 to 31).' },
+    ],
+    examples: [{ title: 'Hash', code: 'password -> $2a$10$...', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-keypair-generator',
+    slug: 'keypair-generator',
+    title: 'Key Pair Generator',
+    description:
+      'Generate RSA or ECDSA cryptographic key pairs in PEM format using Web Crypto API.',
+    shortDescription: 'Generate RSA and ECDSA key pairs in PEM format.',
+    category: 'security-tools',
+    keywords: ['key pair generator', 'rsa key generator', 'ecdsa generator', 'pem keys'],
+    tags: ['security', 'crypto', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Are private keys safe?',
+        answer: 'Generated entirely in your browser via WebCrypto.',
+      },
+    ],
+    examples: [{ title: 'Keys', code: 'RSA 2048 -> Public/Private PEM', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-qr-code-generator',
+    slug: 'qr-code-generator',
+    title: 'QR Code Generator',
+    description:
+      'Create QR codes for URLs, WiFi, vCards, and text with custom colors and error correction.',
+    shortDescription: 'Generate customized QR codes as PNG.',
+    category: 'encoding',
+    keywords: ['qr code generator', 'create qr code', 'wifi qr code', 'vcard qr'],
+    tags: ['qr', 'generator', 'utility'],
+    pricing: 'free',
+    featured: true,
+    faqs: [
+      {
+        question: 'What formats can I download?',
+        answer: 'Download as high-res PNG or copy data URL.',
+      },
+    ],
+    examples: [{ title: 'URL QR', code: 'https://example.com -> QR image', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-qr-code-scanner',
+    slug: 'qr-code-scanner',
+    title: 'QR Code Scanner',
+    description: 'Scan QR codes using your webcam or by uploading an image file.',
+    shortDescription: 'Scan QR codes with camera or image upload.',
+    category: 'encoding',
+    keywords: ['qr code scanner', 'scan qr code', 'webcam qr reader'],
+    tags: ['qr', 'scanner', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      { question: 'Can I upload images?', answer: 'Yes, drop any image containing a QR code.' },
+    ],
+    examples: [{ title: 'Scan', code: 'Camera/Image -> decoded text/URL', language: 'text' }],
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-currency-converter',
+    slug: 'currency-converter',
+    title: 'Currency Converter',
+    description:
+      'Convert between world currencies with live exchange rates. Supports 100+ currencies including crypto.',
+    shortDescription: 'Convert currencies with live exchange rates.',
+    category: 'converters',
+    keywords: [
+      'currency converter',
+      'exchange rate',
+      'forex converter',
+      'currency calculator',
+      'money converter',
+    ],
+    tags: ['currency', 'finance', 'converter'],
+    pricing: 'free',
+    featured: true,
+    faqs: [
+      {
+        question: 'How often are exchange rates updated?',
+        answer: 'Exchange rates are updated hourly from a reliable API source.',
+      },
+      {
+        question: 'Are cryptocurrency rates included?',
+        answer: 'Yes, major cryptocurrencies like Bitcoin and Ethereum are included.',
+      },
+      {
+        question: 'How accurate are the rates?',
+        answer:
+          'Rates are sourced from a reliable financial API and are suitable for estimation. For official transactions, please check with your bank.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Convert USD to EUR',
+        code: '100 USD = 92.50 EUR',
+        language: 'text',
+        variant: 'terminal',
+      },
+      {
+        title: 'Convert crypto to fiat',
+        code: '0.01 BTC = 650.00 USD',
+        language: 'text',
+      },
+    ],
+    relatedTools: ['unit-converter', 'percentage-calculator'],
+    seo: {
+      title: 'Currency Converter — Live Exchange Rates',
+      description:
+        'Convert currencies instantly with live exchange rates. Supports 100+ currencies including crypto.',
+    },
+    createdAt: '2026-08-08T00:00:00.000Z',
+    updatedAt: '2026-08-08T00:00:00.000Z',
+  },
+  {
+    id: 'tool-file-size-converter',
+    slug: 'file-size-converter',
+    title: 'File Size Converter',
+    description:
+      'Convert file sizes between bytes, KB, MB, GB, and TB with both decimal (SI) and binary (IEC) units.',
+    shortDescription: 'Convert between bytes, KB, MB, GB, and TB.',
+    category: 'converters',
+    keywords: ['file size converter', 'bytes to mb', 'gb to mb', 'mb to kb', 'data size'],
+    tags: ['converter', 'utility', 'files'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What is the difference between MB and MiB?',
+        answer:
+          'MB uses decimal (1,000,000 bytes) while MiB uses binary (1,048,576 bytes). Hard drive sizes are usually decimal; RAM is binary.',
+      },
+      {
+        question: 'Which unit is correct for my case?',
+        answer:
+          'Use binary units (KiB, MiB) for memory and most developer tools, decimal units (KB, MB) for storage marketing sizes.',
+      },
+    ],
+    examples: [{ title: 'Convert 2 GB', code: '2 GB = 2,000 MB = 1.86 GiB', language: 'text' }],
+    relatedTools: ['unit-converter', 'number-base-converter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-coordinate-converter',
+    slug: 'coordinate-converter',
+    title: 'Coordinate Converter',
+    description:
+      'Convert geographic coordinates between decimal degrees and degrees-minutes-seconds (DMS) formats.',
+    shortDescription: 'Convert between decimal and DMS coordinates.',
+    category: 'converters',
+    keywords: [
+      'coordinate converter',
+      'decimal to dms',
+      'dms to decimal',
+      'gps coordinates',
+      'latitude longitude',
+    ],
+    tags: ['converter', 'geo', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What format does Google Maps use?',
+        answer:
+          'Google Maps accepts decimal degrees (e.g., 37.7749, -122.4194). DMS uses degrees, minutes, and seconds with N/S/E/W suffixes.',
+      },
+      {
+        question: 'Does it handle negative coordinates?',
+        answer:
+          'Yes — negative latitudes mean south, negative longitudes mean west, and the converter maps them to S/W correctly.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Decimal to DMS',
+        code: '37.7749\u00b0, -122.4194\u00b0 -> 37\u00b0 46\u2032 29.64\u2033 N, 122\u00b0 25\u2032 9.84\u2033 W',
+        language: 'text',
+      },
+    ],
+    relatedTools: ['unit-converter', 'file-size-converter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-timezone-meeting-planner',
+    slug: 'timezone-meeting-planner',
+    title: 'Time Zone Meeting Planner',
+    description:
+      'Find overlapping working hours across multiple time zones to schedule meetings that work for everyone.',
+    shortDescription: 'Find overlapping availability across time zones.',
+    category: 'date-time',
+    keywords: [
+      'meeting planner',
+      'time zone overlap',
+      'schedule across timezones',
+      'world clock meeting',
+    ],
+    tags: ['date', 'time', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How is overlap calculated?',
+        answer:
+          'Each time zone is shifted to your local date and the working window (default 9am to 5pm) is intersected across all selected zones.',
+      },
+      {
+        question: 'Can I use custom working hours?',
+        answer: 'Yes, adjust the start and end hour for the working window.',
+      },
+    ],
+    examples: [
+      { title: 'NY + London + Tokyo', code: 'Overlap found: 8:00 - 9:00 AM UTC', language: 'text' },
+    ],
+    relatedTools: ['timezone-converter', 'timestamp-converter', 'working-days-calculator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-working-days-adder',
+    slug: 'working-days-adder',
+    title: 'Working Days Adder',
+    description:
+      'Add or subtract a number of business days to a date, skipping weekends and holidays.',
+    shortDescription: 'Add or subtract N working days to a date.',
+    category: 'date-time',
+    keywords: [
+      'working days adder',
+      'add business days',
+      'business day calculator',
+      'due date calculator',
+    ],
+    tags: ['date', 'time', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Are weekends skipped?',
+        answer:
+          'Yes, Saturdays and Sundays are skipped by default. You can also list custom holiday dates to exclude.',
+      },
+      {
+        question: 'Can I subtract days?',
+        answer: 'Yes, use a negative count to find the date N working days before a target.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Add 5 working days',
+        code: 'Mon Aug 10 2026 + 5 working days = Mon Aug 17 2026',
+        language: 'text',
+      },
+    ],
+    relatedTools: ['working-days-calculator', 'date-difference-calculator', 'age-calculator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-rrule-calculator',
+    slug: 'rrule-calculator',
+    title: 'Recurring Event (RRULE) Calculator',
+    description:
+      'Build common recurring event rules (daily, weekly, monthly, yearly) and preview the next occurrence dates.',
+    shortDescription: 'Generate recurrence rules and preview next occurrences.',
+    category: 'date-time',
+    keywords: [
+      'rrule calculator',
+      'recurring event generator',
+      'recurrence rule',
+      'icalendar repeat',
+    ],
+    tags: ['date', 'time', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What is an RRULE?',
+        answer:
+          'An RFC 5545 recurrence rule (e.g., FREQ=WEEKLY;INTERVAL=2) used by iCalendar and calendar apps to describe repeating events.',
+      },
+      {
+        question: 'Does it generate full RFC 5545 rules?',
+        answer:
+          'It builds standard FREQ, INTERVAL, BYDAY, and COUNT/UNTIL rules for common patterns and previews the resulting dates.',
+      },
+    ],
+    examples: [
+      { title: 'Biweekly Mondays', code: 'FREQ=WEEKLY;INTERVAL=2;BYDAY=MO', language: 'text' },
+    ],
+    relatedTools: ['cron-generator', 'date-difference-calculator', 'countdown-timer'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-json-schema-generator',
+    slug: 'json-schema-generator',
+    title: 'JSON Schema Generator',
+    description:
+      'Generate a JSON Schema (draft 2020-12) from a sample JSON payload, with inferred types, required fields, and enum detection.',
+    shortDescription: 'Generate JSON Schema from sample JSON data.',
+    category: 'json',
+    keywords: ['json schema generator', 'generate json schema', 'schema from json', 'jsonschema'],
+    tags: ['json', 'schema', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which JSON Schema draft is generated?',
+        answer:
+          'Draft 2020-12 with type inference, required property detection, and enums when all array values are identical.',
+      },
+      {
+        question: 'Can I use it for API validation?',
+        answer:
+          'Yes — paste a sample API response and use the generated schema in tools like AJV or OpenAPI definitions.',
+      },
+    ],
+    examples: [
+      {
+        title: 'From sample payload',
+        code: '{"id": 1, "name": "Ada"} -> {"type": "object", "properties": {...}}',
+        language: 'json',
+      },
+    ],
+    relatedTools: ['json-formatter', 'json-validator', 'json-to-typescript'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-json-to-typescript',
+    slug: 'json-to-typescript',
+    title: 'JSON to TypeScript Interface Generator',
+    description:
+      'Generate TypeScript interfaces or types from a JSON payload, with nullable and optional property detection.',
+    shortDescription: 'Convert JSON payloads into TypeScript interfaces.',
+    category: 'json',
+    keywords: [
+      'json to typescript',
+      'generate typescript interface',
+      'json to ts',
+      'types from json',
+    ],
+    tags: ['json', 'typescript', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Does it handle nested objects and arrays?',
+        answer: 'Yes — nested objects become child interfaces and arrays infer their element type.',
+      },
+      {
+        question: 'Can I choose interface or type?',
+        answer: 'Yes, toggle between interface declarations and type aliases.',
+      },
+    ],
+    examples: [
+      {
+        title: 'From API response',
+        code: '{"user": {"id": 1}} -> interface User { id: number }',
+        language: 'typescript',
+      },
+    ],
+    relatedTools: ['json-formatter', 'json-schema-generator', 'json-to-structs'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-json-to-structs',
+    slug: 'json-to-structs',
+    title: 'JSON to Python/Java/Go Struct Generator',
+    description:
+      'Convert JSON payloads into Python dataclasses, Java classes, or Go structs with proper type mapping.',
+    shortDescription: 'Generate Python, Java, and Go classes from JSON.',
+    category: 'json',
+    keywords: [
+      'json to python',
+      'json to java',
+      'json to go',
+      'struct generator',
+      'dataclass from json',
+    ],
+    tags: ['json', 'generator', 'programming'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which languages are supported?',
+        answer: 'Python dataclasses, Java POJOs, and Go structs with JSON tags.',
+      },
+      {
+        question: 'How are types mapped?',
+        answer:
+          'JSON types map to language-native types: string -> str/String/string, number -> float/double/float64, boolean -> bool/boolean/bool.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Go struct',
+        code: '{"id": 1, "name": "Ada"} -> type Item struct { ID int \u0060json:"id"\u0060 ... }',
+        language: 'go',
+      },
+    ],
+    relatedTools: ['json-formatter', 'json-to-typescript', 'json-schema-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-config-file-converter',
+    slug: 'config-file-converter',
+    title: 'TOML/INI to JSON Converter',
+    description:
+      'Convert configuration files between TOML, INI, and JSON formats with nested section support.',
+    shortDescription: 'Convert between TOML, INI, and JSON config formats.',
+    category: 'converters',
+    keywords: ['toml to json', 'ini to json', 'config converter', 'toml converter', 'ini parser'],
+    tags: ['converter', 'config', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which syntax is supported for TOML?',
+        answer:
+          'Key-value pairs, tables, arrays, inline arrays, booleans, numbers, and basic strings.',
+      },
+      {
+        question: 'How are INI sections handled?',
+        answer:
+          'INI sections become nested JSON objects; keys without a section go to the root object.',
+      },
+    ],
+    examples: [
+      {
+        title: 'TOML to JSON',
+        code: '[server]\nport = 8080 -> {"server": {"port": 8080}}',
+        language: 'text',
+      },
+    ],
+    relatedTools: ['yaml-to-json', 'json-to-yaml', 'json-formatter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-dockerfile-generator',
+    slug: 'dockerfile-generator',
+    title: 'Dockerfile Generator',
+    description:
+      'Generate production-ready Dockerfiles for Node.js, Python, Go, and static sites with best-practice stages.',
+    shortDescription: 'Generate Dockerfiles for common stacks.',
+    category: 'infrastructure',
+    keywords: [
+      'dockerfile generator',
+      'dockerfile template',
+      'create dockerfile',
+      'docker multistage',
+    ],
+    tags: ['docker', 'infrastructure', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which stacks are supported?',
+        answer:
+          'Node.js, Python, Go, and static sites, each with multi-stage builds where sensible.',
+      },
+      {
+        question: 'Is the output production-ready?',
+        answer:
+          'It follows Docker best practices: pinned base images, non-root users, layer caching, and .dockerignore tips.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Node.js',
+        code: 'FROM node:22-alpine AS build\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci',
+        language: 'dockerfile',
+      },
+    ],
+    relatedTools: ['docker', 'gitignore-generator', 'htaccess-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-markdown-table-generator',
+    slug: 'markdown-table-generator',
+    title: 'Markdown Table Generator',
+    description:
+      'Build Markdown tables by pasting CSV/TSV data or filling cells manually, with alignment options.',
+    shortDescription: 'Generate Markdown tables from data or manually.',
+    category: 'markdown',
+    keywords: ['markdown table generator', 'create markdown table', 'md table builder'],
+    tags: ['markdown', 'generator', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Can I paste CSV data?',
+        answer: 'Yes, paste comma- or tab-separated rows and they become table cells.',
+      },
+      {
+        question: 'Does it support alignment?',
+        answer: 'Yes, choose left, center, or right alignment for the generated column headers.',
+      },
+    ],
+    examples: [
+      {
+        title: 'From CSV',
+        code: 'name,role\nAda,Engineer -> | name | role |',
+        language: 'markdown',
+      },
+    ],
+    relatedTools: ['markdown-preview', 'markdown-formatter', 'csv-to-json'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-html-table-generator',
+    slug: 'html-table-generator',
+    title: 'HTML Table Generator',
+    description:
+      'Generate clean HTML tables from pasted CSV/TSV data or manual cell entry, with styling options.',
+    shortDescription: 'Generate HTML tables from CSV or manually.',
+    category: 'web',
+    keywords: ['html table generator', 'create html table', 'table from csv', 'html table builder'],
+    tags: ['html', 'web', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Can I paste spreadsheet data?',
+        answer:
+          'Yes, paste CSV or TSV rows and the tool builds a semantic table with thead and tbody.',
+      },
+      {
+        question: 'Are classes included?',
+        answer:
+          'Basic utility classes for borders, stripes, and hover states are included and easy to remove.',
+      },
+    ],
+    examples: [
+      {
+        title: 'From CSV',
+        code: 'name,role\nAda,Engineer -> <table><thead><tr><th>name</th>...',
+        language: 'html',
+      },
+    ],
+    relatedTools: ['html-to-markdown', 'markdown-table-generator', 'csv-viewer'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-json-ld-generator',
+    slug: 'json-ld-generator',
+    title: 'JSON-LD (Schema.org) Generator',
+    description:
+      'Generate structured data JSON-LD for Article, Product, FAQ, BreadcrumbList, and other Schema.org types.',
+    shortDescription: 'Generate Schema.org JSON-LD structured data.',
+    category: 'web',
+    keywords: [
+      'json-ld generator',
+      'schema.org generator',
+      'structured data',
+      'rich snippets',
+      'ld+json',
+    ],
+    tags: ['seo', 'web', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which schema types are supported?',
+        answer:
+          'Article, Product, FAQPage, BreadcrumbList, Organization, WebSite, and LocalBusiness.',
+      },
+      {
+        question: 'Does it pass Google validation?',
+        answer:
+          'Output follows Schema.org and Google rich-results guidelines; validate the result with Google Rich Results Test.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Article',
+        code: '<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", ...}</script>',
+        language: 'html',
+      },
+    ],
+    relatedTools: ['meta-tag-generator', 'open-graph-preview', 'sitemap-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-twitter-card-preview',
+    slug: 'twitter-card-preview',
+    title: 'Twitter Card Preview',
+    description:
+      'Preview how a page renders as a Twitter/X card by entering its URL or pasting the Open Graph tags directly.',
+    shortDescription: 'Preview Twitter card rendering for your pages.',
+    category: 'web',
+    keywords: [
+      'twitter card preview',
+      'x card preview',
+      'twitter card validator',
+      'social card check',
+    ],
+    tags: ['seo', 'web', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How does the preview work?',
+        answer:
+          'Paste your Open Graph and Twitter meta tags and see exactly how Twitter would render the summary or summary_large_image card.',
+      },
+      {
+        question: 'What makes a card fail?',
+        answer:
+          'Missing twitter:card, oversized images, or missing og:title typically cause fallback rendering without an image.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Card types',
+        code: 'summary_large_image -> large preview with image',
+        language: 'text',
+      },
+    ],
+    relatedTools: ['open-graph-preview', 'meta-tag-generator', 'json-ld-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-curl-generator',
+    slug: 'curl-generator',
+    title: 'cURL Command Generator',
+    description:
+      'Build cURL commands visually (method, headers, body, auth) and convert them to JavaScript fetch code.',
+    shortDescription: 'Generate cURL commands and fetch code.',
+    category: 'api-development',
+    keywords: ['curl generator', 'curl command builder', 'curl to fetch', 'api request builder'],
+    tags: ['api', 'curl', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Can I generate fetch code too?',
+        answer: 'Yes, switch between cURL and JavaScript fetch output for the same request.',
+      },
+      {
+        question: 'How is JSON body handled?',
+        answer:
+          'The body is set as a JSON payload with the Content-Type header applied automatically.',
+      },
+    ],
+    examples: [
+      {
+        title: 'POST with JSON',
+        code: 'curl -X POST https://api.example.com/v1/users -H "Content-Type: application/json" -d \'{"name":"Ada"}\'',
+        language: 'bash',
+      },
+    ],
+    relatedTools: ['postman', 'http-status-explorer', 'url-builder'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-graphql-formatter',
+    slug: 'graphql-formatter',
+    title: 'GraphQL Query Formatter',
+    description:
+      'Format and pretty-print GraphQL queries and schemas with proper indentation and argument alignment.',
+    shortDescription: 'Format and minify GraphQL queries.',
+    category: 'api-development',
+    keywords: [
+      'graphql formatter',
+      'format graphql query',
+      'graphql pretty print',
+      'graphql beautifier',
+    ],
+    tags: ['graphql', 'api', 'formatter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Does it preserve comments?',
+        answer: 'Yes, both # comments and block string arguments are preserved.',
+      },
+      {
+        question: 'Can it minify?',
+        answer: 'Yes, a compact mode strips whitespace for shorter requests.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Format query',
+        code: 'query{user(id:1){name}} -> query { user(id: 1) { name } }',
+        language: 'graphql',
+      },
+    ],
+    relatedTools: ['postman', 'json-formatter', 'curl-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-mac-address-generator',
+    slug: 'mac-address-generator',
+    title: 'MAC Address Generator',
+    description:
+      'Generate random MAC addresses in common formats (colon, hyphen, dot) with optional unicast/multicast flags.',
+    shortDescription: 'Generate random MAC addresses.',
+    category: 'network',
+    keywords: ['mac address generator', 'random mac', 'generate mac address', 'mac address format'],
+    tags: ['network', 'generator', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Are the addresses valid?',
+        answer:
+          'Yes — generated addresses respect the unicast/multicast and locally administered bit rules.',
+      },
+      {
+        question: 'Which formats are available?',
+        answer: 'Colon (aa:bb:cc), hyphen (aa-bb-cc), and Cisco dot (aabb.ccdd.eeff) notation.',
+      },
+    ],
+    examples: [{ title: 'Colon format', code: '02:1a:2b:3c:4d:5e', language: 'text' }],
+    relatedTools: ['ip-lookup', 'uuid-generator', 'what-is-my-ip'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-jwt-encoder',
+    slug: 'jwt-encoder',
+    title: 'JWT Encoder',
+    description:
+      'Create signed JWTs with custom header and payload claims, choosing between HS256 and RS256 signing.',
+    shortDescription: 'Encode and sign JSON Web Tokens.',
+    category: 'security-tools',
+    keywords: ['jwt encoder', 'create jwt', 'jwt signer', 'generate token', 'hs256'],
+    tags: ['security', 'jwt', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How is the token signed?',
+        answer:
+          'HS256 uses a shared secret with the Web Crypto API; RS256 uses a PEM private key. All signing happens in your browser.',
+      },
+      {
+        question: 'Is the secret stored?',
+        answer: 'No — nothing leaves your browser and no values are persisted.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Encode claims',
+        code: '{"sub": "123", "exp": 1893456000} -> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
+        language: 'text',
+      },
+    ],
+    relatedTools: ['jwt-decoder', 'jwt-inspector', 'api-key-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-htpasswd-generator',
+    slug: 'htpasswd-generator',
+    title: 'htpasswd Generator',
+    description:
+      'Generate htpasswd entries with bcrypt or SHA1 hashing for Apache basic authentication.',
+    shortDescription: 'Generate .htpasswd password entries.',
+    category: 'security-tools',
+    keywords: ['htpasswd generator', 'apache htpasswd', 'htpasswd hash', 'basic auth password'],
+    tags: ['security', 'apache', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which hashing algorithms are supported?',
+        answer: 'bcrypt ($2y$) for Apache 2.4+ and legacy {SHA} base64 for older servers.',
+      },
+      {
+        question: 'Is the password stored anywhere?',
+        answer: 'No — hashing happens entirely in your browser.',
+      },
+    ],
+    examples: [{ title: 'bcrypt entry', code: 'alice:$2y$10$9k4X...', language: 'text' }],
+    relatedTools: ['bcrypt-generator', 'basic-auth-header-generator', 'password-strength-checker'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-basic-auth-header-generator',
+    slug: 'basic-auth-header-generator',
+    title: 'Basic Auth Header Generator',
+    description: 'Generate the Authorization: Basic header value for a username and password pair.',
+    shortDescription: 'Generate Basic Authorization headers.',
+    category: 'security-tools',
+    keywords: [
+      'basic auth header',
+      'authorization basic',
+      'base64 auth header',
+      'basic auth generator',
+    ],
+    tags: ['security', 'auth', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How does Basic auth work?',
+        answer:
+          'The username and password are joined with a colon and base64-encoded into the Authorization header value.',
+      },
+      {
+        question: 'Is it secure?',
+        answer:
+          'Basic auth transmits credentials base64-encoded — always use it over HTTPS and prefer stronger flows where possible.',
+      },
+    ],
+    examples: [
+      { title: 'Header value', code: 'Authorization: Basic YWxpY2U6czNjcjN0', language: 'text' },
+    ],
+    relatedTools: ['htpasswd-generator', 'base64-encoder-decoder', 'api-key-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-api-key-generator',
+    slug: 'api-key-generator',
+    title: 'API Key / Token Generator',
+    description:
+      'Generate secure random API keys, secrets, and tokens in customizable formats with entropy display.',
+    shortDescription: 'Generate secure API keys and tokens.',
+    category: 'security-tools',
+    keywords: ['api key generator', 'token generator', 'secret key generator', 'random key'],
+    tags: ['security', 'api', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How are keys generated?',
+        answer:
+          'Using crypto.getRandomValues for cryptographically secure random bytes, encoded as hex or base64url.',
+      },
+      {
+        question: 'Can I add a prefix?',
+        answer: 'Yes, e.g. sk_, pk_, or your own prefix like most SaaS platforms do.',
+      },
+    ],
+    examples: [{ title: 'API key', code: 'sk_live_51McVxE...', language: 'text' }],
+    relatedTools: ['uuid-generator', 'keypair-generator', 'jwt-encoder'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-html-entity-converter',
+    slug: 'html-entity-converter',
+    title: 'HTML Entity Encoder / Decoder',
+    description: 'Encode or decode HTML entities for all named entities and Unicode characters.',
+    shortDescription: 'Encode and decode HTML entities.',
+    category: 'encoding',
+    keywords: [
+      'html entity encoder',
+      'html decode',
+      'encode html characters',
+      'html entity converter',
+      'nbsp decode',
+    ],
+    tags: ['encoding', 'html', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Does it handle named entities?',
+        answer:
+          'Yes — common named entities like &amp;, &lt;, &copy;, and thousands of Unicode entities are supported.',
+      },
+      {
+        question: 'What is encoding used for?',
+        answer:
+          'Encoding prevents HTML injection and displays reserved characters correctly when embedding user content.',
+      },
+    ],
+    examples: [
+      { title: 'Encode', code: '<b>Hello</b> -> &lt;b&gt;Hello&lt;/b&gt;', language: 'text' },
+    ],
+    relatedTools: ['base64-encoder-decoder', 'url-encoder-decoder', 'markdown-to-html'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-punycode-converter',
+    slug: 'punycode-converter',
+    title: 'Punycode / IDN Converter',
+    description:
+      'Convert internationalized domain names (IDN) between Unicode and punycode (xn--) notation.',
+    shortDescription: 'Convert Unicode domains to punycode and back.',
+    category: 'encoding',
+    keywords: [
+      'punycode converter',
+      'idn converter',
+      'unicode domain to punycode',
+      'xn-- converter',
+      'international domain',
+    ],
+    tags: ['encoding', 'domain', 'converter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What is punycode?',
+        answer:
+          'A bootstring encoding that maps Unicode characters to ASCII so international domain names work in DNS.',
+      },
+      {
+        question: 'Why do I see xn-- domains?',
+        answer:
+          'Browsers and DNS use the punycode (xn--) form internally; the Unicode form is for display and input.',
+      },
+    ],
+    examples: [
+      { title: 'Convert IDN', code: 'm\u00fcnchen.de -> xn--mnchen-3ya.de', language: 'text' },
+    ],
+    relatedTools: ['url-encoder-decoder', 'dns-lookup', 'slug-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-base32-converter',
+    slug: 'base32-converter',
+    title: 'Base32 Encoder / Decoder',
+    description:
+      'Encode or decode data using RFC 4648 base32 (and base32hex) with optional padding.',
+    shortDescription: 'Encode and decode base32 strings.',
+    category: 'encoding',
+    keywords: ['base32 encoder', 'base32 decoder', 'base32hex', 'rfc 4648 base32'],
+    tags: ['encoding', 'utility', 'converter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Where is base32 used?',
+        answer:
+          'TOTP/HOTP secrets, DNS keys, and anywhere case-insensitive, human-friendly encoding is needed.',
+      },
+      {
+        question: 'Does it support base32hex?',
+        answer: 'Yes, toggle between standard RFC 4648 alphabet and base32hex.',
+      },
+    ],
+    examples: [{ title: 'Encode', code: 'Hello -> JBSWY3DP', language: 'text' }],
+    relatedTools: ['base64-encoder-decoder', 'url-encoder-decoder', 'html-entity-converter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-duplicate-line-remover',
+    slug: 'duplicate-line-remover',
+    title: 'Duplicate Line Remover',
+    description:
+      'Remove duplicate lines from text with options for case sensitivity and line trimming.',
+    shortDescription: 'Remove duplicate lines from text.',
+    category: 'text',
+    keywords: ['remove duplicate lines', 'dedupe lines', 'duplicate line remover', 'unique lines'],
+    tags: ['text', 'utility', 'formatter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Does it keep the first occurrence?',
+        answer: 'Yes, the first occurrence of each line is kept by default, preserving order.',
+      },
+      { question: 'Can it ignore case?', answer: 'Yes, toggle case-insensitive deduplication.' },
+    ],
+    examples: [{ title: 'Dedupe', code: 'a\na\nb -> a\nb', language: 'text' }],
+    relatedTools: ['text-sorter', 'whitespace-remover', 'find-replace'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-text-sorter',
+    slug: 'text-sorter',
+    title: 'Text Sorter',
+    description:
+      'Sort text lines alphabetically, reverse, by length, or randomly shuffled, with case options.',
+    shortDescription: 'Sort or shuffle lines of text.',
+    category: 'text',
+    keywords: ['text sorter', 'sort lines', 'alphabetize text', 'shuffle lines', 'sort by length'],
+    tags: ['text', 'utility', 'formatter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What sort orders are available?',
+        answer: 'A-Z, Z-A, shortest to longest, longest to shortest, and random shuffle.',
+      },
+      {
+        question: 'Does it remove duplicates?',
+        answer: 'No, but it pairs well with the duplicate line remover.',
+      },
+    ],
+    examples: [{ title: 'Sort A-Z', code: 'b\na\nc -> a\nb\nc', language: 'text' }],
+    relatedTools: ['duplicate-line-remover', 'text-reverser', 'random-number-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-palindrome-checker',
+    slug: 'palindrome-checker',
+    title: 'Palindrome Checker',
+    description:
+      'Check if a word, phrase, or number reads the same forward and backward, ignoring case, spaces, and punctuation.',
+    shortDescription: 'Check text and numbers for palindromes.',
+    category: 'text',
+    keywords: ['palindrome checker', 'is palindrome', 'palindrome test'],
+    tags: ['text', 'utility', 'fun'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Is punctuation ignored?',
+        answer:
+          'By default spaces, punctuation, and case are ignored — e.g., "A man, a plan, a canal: Panama" is a palindrome.',
+      },
+      {
+        question: 'Can I check numbers?',
+        answer: 'Yes, any input is checked, including numeric palindromes like 12321.',
+      },
+    ],
+    examples: [{ title: 'Phrase', code: 'racecar -> yes, palindrome', language: 'text' }],
+    relatedTools: ['text-reverser', 'case-converter', 'character-counter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-morse-code-translator',
+    slug: 'morse-code-translator',
+    title: 'Morse Code Translator',
+    description:
+      'Translate text to Morse code and back, with configurable timing for dot, dash, and spaces.',
+    shortDescription: 'Encode and decode Morse code.',
+    category: 'text',
+    keywords: ['morse code translator', 'text to morse', 'morse decoder', 'morse generator'],
+    tags: ['text', 'encoding', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How are words separated?',
+        answer:
+          'Letters are separated by one space, words by three spaces or a slash in the decoded output.',
+      },
+      {
+        question: 'Are numbers supported?',
+        answer: 'Yes, digits 0-9 and common punctuation are supported.',
+      },
+    ],
+    examples: [{ title: 'Encode', code: 'SOS -> ... --- ...', language: 'text' }],
+    relatedTools: ['text-reverser', 'character-counter', 'base32-converter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-css-animation-generator',
+    slug: 'css-animation-generator',
+    title: 'CSS Animation / Keyframes Generator',
+    description:
+      'Generate CSS @keyframes animations with easing, duration, iteration, and delay controls and a live preview.',
+    shortDescription: 'Generate CSS keyframes animations visually.',
+    category: 'css',
+    keywords: [
+      'css animation generator',
+      'keyframes generator',
+      'css transition',
+      'animation timing',
+    ],
+    tags: ['css', 'design', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which animations are included?',
+        answer:
+          'Fade, slide, bounce, pulse, spin, flip, and shake with editable keyframe percentages.',
+      },
+      {
+        question: 'Can I edit keyframes?',
+        answer:
+          'Yes, adjust duration, delay, easing, iteration count, and direction, then copy the generated CSS.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Fade-in',
+        code: '@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }',
+        language: 'css',
+      },
+    ],
+    relatedTools: ['box-shadow-generator', 'gradient-generator', 'glassmorphism-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-css-triangle-generator',
+    slug: 'css-triangle-generator',
+    title: 'CSS Triangle Generator',
+    description:
+      'Generate CSS-only triangles with direction, size, and color controls and a live preview.',
+    shortDescription: 'Generate CSS-only triangles.',
+    category: 'css',
+    keywords: ['css triangle generator', 'triangle css', 'css arrow', 'border trick triangle'],
+    tags: ['css', 'design', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How do CSS triangles work?',
+        answer:
+          'They use transparent borders with one visible side — a classic border-width trick that needs no images.',
+      },
+      {
+        question: 'Can I make arrows?',
+        answer: 'Yes, rotate any triangle 45 degrees for an arrow/chevron look.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Up triangle',
+        code: 'width: 0; height: 0; border-left: 50px solid transparent; ...',
+        language: 'css',
+      },
+    ],
+    relatedTools: ['border-radius-generator', 'clip-path-generator', 'css-animation-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-glassmorphism-generator',
+    slug: 'glassmorphism-generator',
+    title: 'Glassmorphism / Neumorphism Generator',
+    description:
+      'Generate glassmorphism and neumorphism CSS styles with blur, transparency, and highlight controls.',
+    shortDescription: 'Generate glassmorphism and neumorphism CSS.',
+    category: 'css',
+    keywords: [
+      'glassmorphism generator',
+      'neumorphism generator',
+      'glass effect css',
+      'frosted glass css',
+    ],
+    tags: ['css', 'design', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What is the difference between the two styles?',
+        answer:
+          'Glassmorphism uses translucent backgrounds with backdrop blur; neumorphism uses soft dual shadows for a raised look.',
+      },
+      {
+        question: 'Are there fallbacks?',
+        answer:
+          'The generated code includes graceful fallbacks for browsers without backdrop-filter support.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Glass panel',
+        code: 'background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(12px);',
+        language: 'css',
+      },
+    ],
+    relatedTools: ['box-shadow-generator', 'gradient-generator', 'border-radius-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-css-specificity-calculator',
+    slug: 'css-specificity-calculator',
+    title: 'CSS Specificity Calculator',
+    description:
+      'Calculate and compare CSS selector specificity scores (IDs, classes, elements) to debug style conflicts.',
+    shortDescription: 'Calculate CSS selector specificity scores.',
+    category: 'css',
+    keywords: [
+      'css specificity calculator',
+      'specificity score',
+      'css selector specificity',
+      'which css wins',
+    ],
+    tags: ['css', 'debugging', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How is specificity calculated?',
+        answer:
+          'Count ID selectors (100), classes/attributes/pseudo-classes (10), and element/pseudo-element selectors (1) as in the W3C spec.',
+      },
+      {
+        question: 'Does :is() and :not() count?',
+        answer:
+          'Yes — :not() and :is() take the specificity of their most specific argument, as the spec requires.',
+      },
+    ],
+    examples: [{ title: 'Compare', code: 'div#main .card:hover -> (1, 2, 1)', language: 'text' }],
+    relatedTools: ['css-animation-generator', 'glassmorphism-generator', 'code-formatter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-svg-wave-generator',
+    slug: 'svg-wave-generator',
+    title: 'SVG Wave / Blob Generator',
+    description:
+      'Generate decorative SVG waves and blobs with configurable colors, curves, and layers for hero sections.',
+    shortDescription: 'Generate SVG waves and blob shapes.',
+    category: 'images',
+    keywords: [
+      'svg wave generator',
+      'svg blob generator',
+      'wave divider svg',
+      'svg shape generator',
+    ],
+    tags: ['svg', 'design', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Can I download the result?',
+        answer: 'Yes, download the SVG file or copy the markup and background data URL.',
+      },
+      {
+        question: 'Are the paths editable?',
+        answer:
+          'Yes, adjust amplitude, frequency, layers, and colors and the path is regenerated live.',
+      },
+    ],
+    examples: [
+      { title: 'Wave divider', code: '<svg viewBox="0 0 1440 320">...</svg>', language: 'xml' },
+    ],
+    relatedTools: ['svg-optimizer', 'gradient-generator', 'favicon-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-placeholder-image-generator',
+    slug: 'placeholder-image-generator',
+    title: 'Placeholder Image Generator',
+    description:
+      'Generate placeholder images with custom dimensions, text, and colors — perfect for layouts and mockups.',
+    shortDescription: 'Generate placeholder images by dimension.',
+    category: 'images',
+    keywords: [
+      'placeholder image generator',
+      'placeholder image',
+      'dummy image',
+      'image placeholder 800x600',
+    ],
+    tags: ['images', 'design', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What format is generated?',
+        answer: 'A crisp SVG placeholder you can download or use directly as an img src data URL.',
+      },
+      {
+        question: 'Can I set the text?',
+        answer: 'Yes, custom text and colors are supported — defaults to WxH dimensions.',
+      },
+    ],
+    examples: [
+      { title: '800x600', code: 'https://localhost/placeholder 800x600 -> SVG', language: 'text' },
+    ],
+    relatedTools: ['favicon-generator', 'image-resizer', 'image-format-converter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-aspect-ratio-calculator',
+    slug: 'aspect-ratio-calculator',
+    title: 'Aspect Ratio Calculator',
+    description:
+      'Calculate the aspect ratio of an image or video and find missing dimensions while keeping the ratio intact.',
+    shortDescription: 'Calculate aspect ratios and missing dimensions.',
+    category: 'numbers',
+    keywords: [
+      'aspect ratio calculator',
+      '16:9 calculator',
+      'ratio dimensions',
+      'image ratio calculator',
+    ],
+    tags: ['math', 'images', 'calculator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What is a common aspect ratio?',
+        answer:
+          '16:9 for widescreen video, 4:3 for older displays, and 1:1 for square social images.',
+      },
+      {
+        question: 'Can I compute dimensions?',
+        answer: 'Yes, enter width or height and the tool derives the other to keep the ratio.',
+      },
+    ],
+    examples: [{ title: '16:9 at 1920', code: '1920x1080', language: 'text' }],
+    relatedTools: ['percentage-calculator', 'image-resizer', 'unit-converter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-statistics-calculator',
+    slug: 'statistics-calculator',
+    title: 'Statistics Calculator',
+    description:
+      'Compute mean, median, mode, variance, and standard deviation for a set of numbers.',
+    shortDescription: 'Calculate mean, median, mode, and standard deviation.',
+    category: 'numbers',
+    keywords: [
+      'statistics calculator',
+      'mean median mode',
+      'standard deviation calculator',
+      'variance calculator',
+    ],
+    tags: ['math', 'statistics', 'calculator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which statistics are computed?',
+        answer:
+          'Count, sum, mean, median, mode, range, variance, and sample/population standard deviation.',
+      },
+      {
+        question: 'How do I input values?',
+        answer: 'Space, comma, or newline separated numbers are all accepted.',
+      },
+    ],
+    examples: [
+      { title: 'Dataset', code: '1, 2, 2, 3, 4 -> mean 2.4, stddev 1.02', language: 'text' },
+    ],
+    relatedTools: ['percentage-calculator', 'gcd-lcm-calculator', 'prime-number-checker'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-factorial-fibonacci-generator',
+    slug: 'factorial-fibonacci-generator',
+    title: 'Factorial & Fibonacci Generator',
+    description:
+      'Compute the factorial of any number and generate Fibonacci sequences with configurable length.',
+    shortDescription: 'Compute factorials and Fibonacci sequences.',
+    category: 'numbers',
+    keywords: [
+      'factorial calculator',
+      'fibonacci generator',
+      'factorial of n',
+      'fibonacci sequence',
+    ],
+    tags: ['math', 'numbers', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How large can the factorial be?',
+        answer: 'Results use BigInt, so values beyond 170! are supported exactly.',
+      },
+      {
+        question: 'Can I limit the Fibonacci sequence?',
+        answer: 'Yes, choose how many terms to generate, up to a few thousand.',
+      },
+    ],
+    examples: [{ title: 'Fibonacci', code: '0, 1, 1, 2, 3, 5, 8, 13...', language: 'text' }],
+    relatedTools: ['statistics-calculator', 'prime-number-checker', 'gcd-lcm-calculator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-number-to-words',
+    slug: 'number-to-words',
+    title: 'Number to Words Converter',
+    description: 'Convert numbers into English words, including large numbers and decimal amounts.',
+    shortDescription: 'Convert numbers to written English words.',
+    category: 'numbers',
+    keywords: ['number to words', 'numbers in words', 'amount in words', 'spell number'],
+    tags: ['numbers', 'converter', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How large can the number be?',
+        answer: 'Up to the vigintillions (10^63) are supported with proper scale names.',
+      },
+      {
+        question: 'Does it handle decimals?',
+        answer:
+          'Yes, decimal parts are spelled out digit by digit or as "point" followed by words.',
+      },
+    ],
+    examples: [
+      { title: 'Spell 1234', code: 'one thousand two hundred thirty-four', language: 'text' },
+    ],
+    relatedTools: ['number-base-converter', 'percentage-calculator', 'roman-numeral-converter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-quadratic-solver',
+    slug: 'quadratic-solver',
+    title: 'Quadratic Equation Solver',
+    description:
+      'Solve quadratic equations ax\u00b2 + bx + c = 0 with real and complex roots shown step by step.',
+    shortDescription: 'Solve quadratic equations with steps.',
+    category: 'numbers',
+    keywords: [
+      'quadratic solver',
+      'quadratic equation calculator',
+      'solve ax2 bx c',
+      'discriminant',
+    ],
+    tags: ['math', 'numbers', 'calculator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What if the discriminant is negative?',
+        answer: 'The solver returns complex roots using the imaginary unit i.',
+      },
+      {
+        question: 'Does it show steps?',
+        answer: 'Yes, the discriminant, root formula, and simplified results are displayed.',
+      },
+    ],
+    examples: [{ title: 'x\u00b2-5x+6=0', code: 'x = 2 and x = 3', language: 'text' }],
+    relatedTools: ['statistics-calculator', 'prime-number-checker', 'number-base-converter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-mock-data-generator',
+    slug: 'mock-data-generator',
+    title: 'Mock / Fake Data Generator',
+    description:
+      'Generate realistic fake data — names, emails, addresses, companies — as JSON or CSV rows for testing.',
+    shortDescription: 'Generate realistic fake people and data rows.',
+    category: 'databases',
+    keywords: [
+      'mock data generator',
+      'fake data generator',
+      'fake people',
+      'test data generator',
+      'seed data',
+    ],
+    tags: ['data', 'testing', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which fields are available?',
+        answer:
+          'Name, email, phone, address, city, country, company, job title, and UUID — all optional.',
+      },
+      {
+        question: 'Can I choose the output format?',
+        answer: 'Yes, generate JSON, CSV, or SQL INSERT statements for the same dataset.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Fake person',
+        code: 'Ada Lovelace, ada.lovelace@example.com, 1847 London',
+        language: 'text',
+      },
+    ],
+    relatedTools: ['csv-to-json', 'json-to-csv', 'sql-formatter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-connection-string-parser',
+    slug: 'connection-string-parser',
+    title: 'Connection String Parser / Builder',
+    description:
+      'Parse and build database connection strings (PostgreSQL, MySQL, MongoDB, Redis) with fields edited visually.',
+    shortDescription: 'Parse and build database connection strings.',
+    category: 'databases',
+    keywords: [
+      'connection string parser',
+      'database url parser',
+      'mongodb uri builder',
+      'postgres connection string',
+    ],
+    tags: ['database', 'utility', 'converter'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which database formats are supported?',
+        answer: 'PostgreSQL, MySQL, MongoDB, Redis, and generic URL-style connection strings.',
+      },
+      {
+        question: 'Does it hide passwords?',
+        answer: 'Yes, display redaction is available for sharing configs safely.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Parse Postgres',
+        code: 'postgres://user:pass@localhost:5432/db -> host, port, db',
+        language: 'text',
+      },
+    ],
+    relatedTools: ['mock-data-generator', 'supabase', 'prisma'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-csv-to-sql',
+    slug: 'csv-to-sql',
+    title: 'CSV to SQL INSERT Generator',
+    description:
+      'Convert CSV data into SQL INSERT statements with a target table name and proper escaping.',
+    shortDescription: 'Generate SQL INSERT statements from CSV.',
+    category: 'databases',
+    keywords: [
+      'csv to sql',
+      'csv to insert',
+      'generate sql insert',
+      'csv to sqlite',
+      'seed table from csv',
+    ],
+    tags: ['sql', 'csv', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How are values escaped?',
+        answer:
+          'Strings are single-quoted with doubled quotes; NULL for empty cells; numbers detected automatically.',
+      },
+      {
+        question: 'Can I batch rows?',
+        answer: 'Yes, choose one INSERT per row or multi-row batches for faster imports.',
+      },
+    ],
+    examples: [
+      {
+        title: 'From CSV',
+        code: "id,name\n1,Ada -> INSERT INTO table (id, name) VALUES (1, 'Ada');",
+        language: 'sql',
+      },
+    ],
+    relatedTools: ['csv-viewer', 'sql-formatter', 'mock-data-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-dice-roller',
+    slug: 'dice-roller',
+    title: 'Dice Roller & Coin Flip',
+    description:
+      'Roll standard polyhedral dice (d4 to d100) or flip a coin with animation and roll history.',
+    shortDescription: 'Roll dice and flip coins online.',
+    category: 'generators',
+    keywords: ['dice roller', 'dnd dice', 'roll d20', 'coin flip', 'random dice'],
+    tags: ['random', 'fun', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which dice are supported?',
+        answer: 'd4, d6, d8, d10, d12, d20, d100, plus coin flips and custom n-sided dice.',
+      },
+      {
+        question: 'Can I roll multiple dice?',
+        answer: 'Yes, choose the number of dice to roll at once and view the total.',
+      },
+    ],
+    examples: [{ title: 'Roll 2d6', code: '3 + 5 = 8', language: 'text' }],
+    relatedTools: ['random-number-generator', 'random-color-generator', 'mock-data-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-random-color-generator',
+    slug: 'random-color-generator',
+    title: 'Random Color Generator',
+    description:
+      'Generate random colors with hex, RGB, and HSL values, with palette mode and copy on click.',
+    shortDescription: 'Generate random colors and palettes.',
+    category: 'generators',
+    keywords: [
+      'random color generator',
+      'random hex color',
+      'color palette random',
+      'random color picker',
+    ],
+    tags: ['random', 'color', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Can I copy colors quickly?',
+        answer: 'Yes — click any swatch to copy its hex value instantly.',
+      },
+      {
+        question: 'Does it generate palettes?',
+        answer: 'Yes, palette mode generates 5 harmonious colors at once.',
+      },
+    ],
+    examples: [{ title: 'Random hex', code: '#3b82f6', language: 'text' }],
+    relatedTools: ['color-palette-generator', 'dice-roller', 'color-converter'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-readability-score',
+    slug: 'readability-score',
+    title: 'Readability Score Checker',
+    description:
+      'Measure the readability of your text with Flesch Reading Ease, Flesch-Kincaid Grade, and other scores.',
+    shortDescription: 'Check Flesch reading ease and grade level.',
+    category: 'accessibility',
+    keywords: [
+      'readability score',
+      'flesch reading ease',
+      'flesch kincaid grade',
+      'text readability',
+      'reading level',
+    ],
+    tags: ['accessibility', 'text', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What is a good Flesch score?',
+        answer:
+          '60-70 is plain English (easy), 30-50 is college level (hard). Aim high for public-facing copy.',
+      },
+      {
+        question: 'How is the grade level computed?',
+        answer:
+          'Flesch-Kincaid Grade converts the score to a US school grade, combining syllables per word and words per sentence.',
+      },
+    ],
+    examples: [
+      { title: 'Sample text', code: 'Reading ease: 65.1 (Plain English)', language: 'text' },
+    ],
+    relatedTools: ['character-counter', 'keyword-density-checker', 'alt-text-checker'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-aria-reference',
+    slug: 'aria-reference',
+    title: 'ARIA Roles & Attributes Reference',
+    description:
+      'Searchable reference for ARIA roles, states, and properties with usage notes and examples.',
+    shortDescription: 'Reference for ARIA roles and attributes.',
+    category: 'accessibility',
+    keywords: [
+      'aria reference',
+      'aria roles',
+      'aria attributes',
+      'wai-aria',
+      'accessibility reference',
+    ],
+    tags: ['accessibility', 'reference', 'web'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'When should I use ARIA?',
+        answer:
+          'ARIA fixes accessibility gaps when native HTML is insufficient — prefer semantic HTML first.',
+      },
+      {
+        question: 'Are ARIA roles searchable?',
+        answer: 'Yes, filter by role name, attribute, or keywords like "modal" or "slider".',
+      },
+    ],
+    examples: [
+      {
+        title: 'Role example',
+        code: '<div role="alert">Something went wrong</div>',
+        language: 'html',
+      },
+    ],
+    relatedTools: ['readability-score', 'alt-text-checker', 'color-contrast-checker'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-alt-text-checker',
+    slug: 'alt-text-checker',
+    title: 'Alt Text Checker',
+    description: 'Evaluate the quality of image alt text against common accessibility guidelines.',
+    shortDescription: 'Check alt text quality and length.',
+    category: 'accessibility',
+    keywords: [
+      'alt text checker',
+      'alt text length',
+      'image alt accessibility',
+      'alt attribute check',
+    ],
+    tags: ['accessibility', 'seo', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How long should alt text be?',
+        answer:
+          'Around 125 characters or fewer for most screen readers, describing the image\u2019s purpose.',
+      },
+      {
+        question: 'What makes bad alt text?',
+        answer:
+          'Filler like "image", "photo", or keywords-stuffed descriptions add noise and hurt both accessibility and SEO.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Good alt text',
+        code: 'Orange kitten sitting on a striped blanket',
+        language: 'text',
+      },
+    ],
+    relatedTools: ['readability-score', 'aria-reference', 'keyword-density-checker'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-conventional-commit-generator',
+    slug: 'conventional-commit-generator',
+    title: 'Conventional Commit Generator',
+    description:
+      'Build conventional commit messages (feat, fix, docs, breaking changes) with commitlint-valid output.',
+    shortDescription: 'Generate conventional commit messages.',
+    category: 'productivity',
+    keywords: [
+      'conventional commits',
+      'commit message generator',
+      'git commit type',
+      'semantic commit',
+    ],
+    tags: ['git', 'productivity', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What is a conventional commit?',
+        answer:
+          'A standardized format like "feat: add login" that enables automatic changelogs and versioning.',
+      },
+      {
+        question: 'Is the output commitlint-compatible?',
+        answer: 'Yes — generated messages pass default commitlint rules.',
+      },
+    ],
+    examples: [
+      { title: 'Feature commit', code: 'feat(auth): add password reset flow', language: 'text' },
+    ],
+    relatedTools: ['changelog-generator', 'gitignore-generator', 'readme-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-changelog-generator',
+    slug: 'changelog-generator',
+    title: 'Changelog Generator',
+    description:
+      'Generate a Keep a Changelog-style CHANGELOG.md from a list of changes grouped by version and type.',
+    shortDescription: 'Generate Keep a Changelog-style changelogs.',
+    category: 'productivity',
+    keywords: [
+      'changelog generator',
+      'keep a changelog',
+      'changelog md',
+      'release notes generator',
+    ],
+    tags: ['markdown', 'productivity', 'generator'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'What structure is used?',
+        answer:
+          'The Keep a Changelog format: Added, Changed, Deprecated, Removed, Fixed, Security sections per version.',
+      },
+      {
+        question: 'Can I add multiple versions?',
+        answer: 'Yes, add as many version blocks as you need before exporting.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Changelog block',
+        code: '## [1.1.0] - 2026-08-09\n### Added\n- New API endpoints',
+        language: 'markdown',
+      },
+    ],
+    relatedTools: ['conventional-commit-generator', 'readme-generator', 'markdown-preview'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-env-file-generator',
+    slug: 'env-file-generator',
+    title: '.env File Generator / Validator',
+    description:
+      'Generate .env and .env.example files with templates for common stacks and validate existing files.',
+    shortDescription: 'Generate and validate .env files.',
+    category: 'productivity',
+    keywords: [
+      'env generator',
+      'env file validator',
+      'create .env',
+      'env.example template',
+      'environment variables',
+    ],
+    tags: ['devops', 'productivity', 'utility'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'Which templates are included?',
+        answer: 'Node.js, Next.js, Python/Django, Go, and database connection presets.',
+      },
+      {
+        question: 'What does validation check?',
+        answer:
+          'Format issues, duplicate keys, whitespace errors, and missing values marked for attention.',
+      },
+    ],
+    examples: [
+      { title: 'Next.js env', code: 'NEXT_PUBLIC_API_URL=\nDATABASE_URL=', language: 'text' },
+    ],
+    relatedTools: ['dockerfile-generator', 'gitignore-generator', 'connection-string-parser'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
+  },
+  {
+    id: 'tool-git-cheatsheet',
+    slug: 'git-cheatsheet',
+    title: 'Git Cheat Sheet',
+    description:
+      'A searchable reference for everyday Git commands: staging, branching, merging, rebasing, and fixing mistakes.',
+    shortDescription: 'Searchable reference for Git commands.',
+    category: 'productivity',
+    keywords: ['git cheatsheet', 'git commands', 'git cheat sheet', 'git reference', 'git basics'],
+    tags: ['git', 'reference', 'productivity'],
+    pricing: 'free',
+    featured: false,
+    faqs: [
+      {
+        question: 'How do I undo a commit?',
+        answer:
+          'git reset --soft HEAD~1 keeps changes staged; git revert commits a new inverse commit for shared branches.',
+      },
+      {
+        question: 'What is the difference between merge and rebase?',
+        answer:
+          'Merge preserves history with a merge commit; rebase rewrites history for a linear log.',
+      },
+    ],
+    examples: [
+      { title: 'Stash changes', code: 'git stash push -m "wip"; git stash pop', language: 'bash' },
+    ],
+    relatedTools: ['gitignore-generator', 'conventional-commit-generator', 'changelog-generator'],
+    createdAt: '2026-08-09T00:00:00.000Z',
+    updatedAt: '2026-08-09T00:00:00.000Z',
   },
 ];

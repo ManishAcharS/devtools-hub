@@ -63,14 +63,14 @@ function clamp(value: number, min: number, max: number): number {
 
 export function hexToRgb(input: string): RgbTuple | null {
   const hex = input.trim().replace(/^#/, '');
-  if (/^[0-9a-f]{3}$/i.test(hex)) {
+  if (/^[0-9a-f]{3,4}$/i.test(hex)) {
     return [
       parseInt(hex[0] + hex[0], 16),
       parseInt(hex[1] + hex[1], 16),
       parseInt(hex[2] + hex[2], 16),
     ];
   }
-  if (/^[0-9a-f]{6}$/i.test(hex)) {
+  if (/^[0-9a-f]{6,8}$/i.test(hex)) {
     return [
       parseInt(hex.slice(0, 2), 16),
       parseInt(hex.slice(2, 4), 16),

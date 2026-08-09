@@ -322,3 +322,172 @@ export function fromLocalInputValue(value: string): Date | null {
   const parsed = new Date(value);
   return Number.isNaN(parsed.getTime()) ? null : parsed;
 }
+
+export interface AgeResult {
+  years: number;
+  months: number;
+  days: number;
+  totalDays: number;
+  totalWeeks: number;
+  totalHours: number;
+  nextBirthdayInDays: number;
+  error: string | null;
+}
+
+export function ageFromDate(birthDate: Date, now: Date = new Date()): AgeResult {
+  if (Number.isNaN(birthDate.getTime())) {
+    return {
+      years: 0,
+      months: 0,
+      days: 0,
+      totalDays: 0,
+      totalWeeks: 0,
+      totalHours: 0,
+      nextBirthdayInDays: 0,
+      error: 'Enter a valid birth date.',
+    };
+  }
+  if (birthDate.getTime() > now.getTime()) {
+    return {
+      years: 0,
+      months: 0,
+      days: 0,
+      totalDays: 0,
+      totalWeeks: 0,
+      totalHours: 0,
+      nextBirthdayInDays: 0,
+      error: 'The birth date cannot be in the future.',
+    };
+  }
+  let years = now.getFullYear() - birthDate.getFullYear();
+  let months = now.getMonth() - birthDate.getMonth();
+  let days = now.getDate() - birthDate.getDate();
+  if (days < 0) {
+    months -= 1;
+    const previousMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+    days += previousMonthEnd;
+  }
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+  const deltaMs = now.getTime() - birthDate.getTime();
+  const nextBirthday = new Date(now.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+  if (nextBirthday.getTime() < now.getTime()) {
+    nextBirthday.setFullYear(now.getFullYear() + 1);
+  }
+  return {
+    years,
+    months,
+    days,
+    totalDays: Math.floor(deltaMs / 86_400_000),
+    totalWeeks: Math.floor(deltaMs / (7 * 86_400_000)),
+    totalHours: Math.floor(deltaMs / 3_600_000),
+    nextBirthdayInDays: Math.floor((nextBirthday.getTime() - now.getTime()) / 86_400_000),
+    error: null,
+  };
+}
+
+export interface WorkingDaysResult {
+  calendarDays: number;
+  workingDays: number;
+  weekendDays: number;
+  holidayDays: number;
+  error: string | null;
+}
+
+export function workingDaysBetween(
+  from: Date,
+  to: Date,
+  excludeWeekends: boolean,
+  holidays: Date[] = []
+): WorkingDaysResult {
+  if (Number.isNaN(from.getTime()) || Number.isNaN(to.getTime())) {
+    return {
+      calendarDays: 0,
+      workingDays: 0,
+      weekendDays: 0,
+      holidayDays: 0,
+      error: 'Enter valid start and end dates.',
+    };
+  }
+  const start = new Date(from.getFullYear(), from.getMonth(), from.getDate());
+  const end = new Date(to.getFullYear(), to.getMonth(), to.getDate());
+  const calendarDays = Math.round((end.getTime() - start.getTime()) / 86_400_000) + 1;
+  if (calendarDays <= 0) {
+    return {
+      calendarDays: 0,
+      workingDays: 0,
+      weekendDays: 0,
+      holidayDays: 0,
+      error: 'The end date must be on or after the start date.',
+    };
+  }
+  const holidaySet = new Set(
+    holidays
+      .filter((holiday) => !Number.isNaN(holiday.getTime()))
+      .map((holiday) => holiday.toDateString())
+  );
+  let weekendDays = 0;
+  let holidayDays = 0;
+  let workingDays = 0;
+  const cursor = new Date(start);
+  for (let day = 0; day < calendarDays; day += 1) {
+    const weekday = cursor.getDay();
+    const isWeekend = weekday === 0 || weekday === 6;
+    const isHoliday = holidaySet.has(cursor.toDateString());
+    if (isWeekend) weekendDays += 1;
+    if (isHoliday) holidayDays += 1;
+    if (excludeWeekends ? !isWeekend && !isHoliday : !isHoliday) workingDays += 1;
+    cursor.setDate(cursor.getDate() + 1);
+  }
+  return { calendarDays, workingDays, weekendDays, holidayDays, error: null };
+}
+
+export type IsoKind = 'utc' | 'offset' | 'local' | 'date-only' | 'basic' | 'invalid';
+
+export interface Iso8601Result {
+  kind: IsoKind;
+  date: Date | null;
+  epochSeconds: string | null;
+  epochMilliseconds: string | null;
+  utc: string | null;
+  local: string | null;
+  error: string | null;
+}
+
+const BASIC_PATTERN = /^\d{8}T\d{6}(Z|[+-]\d{4})?$/;
+
+export function analyzeIso8601(input: string): Iso8601Result {
+  const trimmed = input.trim();
+  const invalid: Iso8601Result = {
+    kind: 'invalid',
+    date: null,
+    epochSeconds: null,
+    epochMilliseconds: null,
+    utc: null,
+    local: null,
+    error:
+      'This is not a valid ISO 8601 string. Try 2026-08-08, 2026-08-08T10:30:00Z, or 2026-08-08T10:30:00+02:00.',
+  };
+  if (trimmed.length === 0) return invalid;
+
+  let kind: IsoKind = 'local';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) kind = 'date-only';
+  else if (BASIC_PATTERN.test(trimmed)) kind = 'basic';
+  else if (/Z$/.test(trimmed)) kind = 'utc';
+  else if (/[+-]\d{2}:\d{2}$/.test(trimmed)) kind = 'offset';
+
+  const parsed = new Date(trimmed);
+  if (Number.isNaN(parsed.getTime())) return invalid;
+
+  return {
+    kind,
+    date: parsed,
+    epochSeconds: String(Math.floor(parsed.getTime() / 1000)),
+    epochMilliseconds: String(parsed.getTime()),
+    utc: parsed.toISOString(),
+    local: formatLocalIso(parsed),
+    error: null,
+  };
+}

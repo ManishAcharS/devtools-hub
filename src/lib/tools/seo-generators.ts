@@ -1,0 +1,185 @@
+export interface MetaTagOptions {
+  title: string;
+  description: string;
+  keywords: string;
+  author: string;
+  ogTitle: string;
+  ogDescription: string;
+  ogImage: string;
+  ogUrl: string;
+  ogType: 'website' | 'article';
+  twitterCard: 'summary' | 'summary_large_image';
+  twitterSite: string;
+  twitterCreator: string;
+  canonical: string;
+  robots: string;
+}
+
+export const DEFAULT_META_TAGS: MetaTagOptions = {
+  title: '',
+  description: '',
+  keywords: '',
+  author: '',
+  ogTitle: '',
+  ogDescription: '',
+  ogImage: '',
+  ogUrl: '',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterSite: '',
+  twitterCreator: '',
+  canonical: '',
+  robots: 'index, follow',
+};
+
+export function generateMetaTags(options: MetaTagOptions): string {
+  const lines: string[] = [];
+  if (options.title) lines.push(`<title>${escapeHtml(options.title)}</title>`);
+  if (options.description)
+    lines.push(`<meta name="description" content="${escapeHtml(options.description)}">`);
+  if (options.keywords)
+    lines.push(`<meta name="keywords" content="${escapeHtml(options.keywords)}">`);
+  if (options.author) lines.push(`<meta name="author" content="${escapeHtml(options.author)}">`);
+  if (options.robots) lines.push(`<meta name="robots" content="${escapeHtml(options.robots)}">`);
+  if (options.canonical)
+    lines.push(`<link rel="canonical" href="${escapeHtml(options.canonical)}">`);
+  if (options.ogTitle)
+    lines.push(`<meta property="og:title" content="${escapeHtml(options.ogTitle)}">`);
+  if (options.ogDescription)
+    lines.push(`<meta property="og:description" content="${escapeHtml(options.ogDescription)}">`);
+  if (options.ogImage)
+    lines.push(`<meta property="og:image" content="${escapeHtml(options.ogImage)}">`);
+  if (options.ogUrl) lines.push(`<meta property="og:url" content="${escapeHtml(options.ogUrl)}">`);
+  lines.push(`<meta property="og:type" content="${options.ogType}">`);
+  if (options.twitterCard)
+    lines.push(`<meta name="twitter:card" content="${options.twitterCard}">`);
+  if (options.twitterSite)
+    lines.push(`<meta name="twitter:site" content="${escapeHtml(options.twitterSite)}">`);
+  if (options.twitterCreator)
+    lines.push(`<meta name="twitter:creator" content="${escapeHtml(options.twitterCreator)}">`);
+  return lines.join('\n');
+}
+
+export interface OpenGraphPreview {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+  type: string;
+  siteName: string;
+}
+
+export function extractOpenGraph(html: string): OpenGraphPreview | null {
+  const getMeta = (property: string) => {
+    const regex = new RegExp(
+      `<meta\\s+(?:property|name)=["']${property}["']\\s+content=["']([^"']*)["']`,
+      'i'
+    );
+    const match = html.match(regex);
+    return match?.[1] ?? '';
+  };
+  return {
+    title: getMeta('og:title') || getMeta('twitter:title'),
+    description: getMeta('og:description') || getMeta('twitter:description'),
+    image: getMeta('og:image') || getMeta('twitter:image'),
+    url: getMeta('og:url'),
+    type: getMeta('og:type') || 'website',
+    siteName: getMeta('og:site_name'),
+  };
+}
+
+export interface RobotsTxtOptions {
+  userAgent: string;
+  allow: string[];
+  disallow: string[];
+  sitemap: string;
+  crawlDelay: number;
+}
+
+export function generateRobotsTxt(options: RobotsTxtOptions): string {
+  const lines: string[] = [];
+  lines.push(`User-agent: ${options.userAgent || '*'}`);
+  for (const path of options.disallow) {
+    if (path) lines.push(`Disallow: ${path}`);
+  }
+  for (const path of options.allow) {
+    if (path) lines.push(`Allow: ${path}`);
+  }
+  if (options.crawlDelay > 0) lines.push(`Crawl-delay: ${options.crawlDelay}`);
+  if (options.sitemap) lines.push(`Sitemap: ${options.sitemap}`);
+  return lines.join('\n') + '\n';
+}
+
+export interface SitemapUrl {
+  url: string;
+  lastmod?: string;
+  changefreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+  priority?: number;
+}
+
+export function generateSitemap(urls: SitemapUrl[]): string {
+  const lines: string[] = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ];
+  for (const entry of urls) {
+    lines.push('  <url>');
+    lines.push(`    <loc>${escapeXml(entry.url)}</loc>`);
+    if (entry.lastmod) lines.push(`    <lastmod>${entry.lastmod}</lastmod>`);
+    if (entry.changefreq) lines.push(`    <changefreq>${entry.changefreq}</changefreq>`);
+    if (entry.priority !== undefined)
+      lines.push(`    <priority>${entry.priority.toFixed(1)}</priority>`);
+    lines.push('  </url>');
+  }
+  lines.push('</urlset>');
+  return lines.join('\n');
+}
+
+export interface HtaccessOptions {
+  forceHttps: boolean;
+  wwwRedirect: 'none' | 'add' | 'remove';
+  customRules: string;
+}
+
+export function generateHtaccess(options: HtaccessOptions): string {
+  const lines: string[] = ['# .htaccess generated by DevTools Hub'];
+  if (options.forceHttps) {
+    lines.push('RewriteEngine On');
+    lines.push('RewriteCond %{HTTPS} off');
+    lines.push('RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]');
+    lines.push('');
+  }
+  if (options.wwwRedirect === 'add') {
+    lines.push('RewriteEngine On');
+    lines.push('RewriteCond %{HTTP_HOST} !^www\\. [NC]');
+    lines.push('RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]');
+    lines.push('');
+  } else if (options.wwwRedirect === 'remove') {
+    lines.push('RewriteEngine On');
+    lines.push('RewriteCond %{HTTP_HOST} ^www\\.(.*)$ [NC]');
+    lines.push('RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [L,R=301]');
+    lines.push('');
+  }
+  if (options.customRules.trim()) {
+    lines.push(options.customRules.trim());
+  }
+  return lines.join('\n') + '\n';
+}
+
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, '&')
+    .replace(/</g, '<')
+    .replace(/>/g, '>')
+    .replace(/"/g, '"')
+    .replace(/'/g, '&#039;');
+}
+
+function escapeXml(text: string): string {
+  return text
+    .replace(/&/g, '&')
+    .replace(/</g, '<')
+    .replace(/>/g, '>')
+    .replace(/"/g, '"')
+    .replace(/'/g, '&apos;');
+}

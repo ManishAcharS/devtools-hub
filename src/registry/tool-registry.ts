@@ -153,7 +153,7 @@ export function getRelatedToolsFor(definition: ToolDefinition, count = 3): ToolD
 
 function similarityScore(source: ToolDefinition, candidate: ToolDefinition): number {
   let score = 0;
-  if (candidate.category === source.category) score += 4;
+  if (candidate.category === source.category) score += 10;
   const sharedTags = candidate.tags.filter((tag) => source.tags.includes(tag)).length;
   score += sharedTags * 2;
   const sharedKeywords = candidate.keywords.filter((keyword) =>

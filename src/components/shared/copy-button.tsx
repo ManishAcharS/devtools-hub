@@ -88,7 +88,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({
         failed && 'text-red-600 dark:text-red-400',
         className
       )}
-      aria-label={copied ? copiedLabel : label}
+      aria-label={copied ? copiedLabel : failed ? 'Failed' : label}
       title={label}
       {...props}
     >

@@ -207,3 +207,211 @@ function pushPart(
     parts.push({ operation, value });
   }
 }
+
+export function reverseCharacters(text: string): string {
+  return [...text].reverse().join('');
+}
+
+export function reverseWords(text: string): string {
+  return text.split(/(\s+)/).reverse().join('');
+}
+
+export function reverseLines(text: string): string {
+  return text.split('\n').reverse().join('\n');
+}
+
+export type WhitespaceMode = 'all' | 'line-breaks' | 'extra-spaces' | 'trim-lines';
+
+export interface WhitespaceResult {
+  value: string;
+  removedCount: number;
+}
+
+export function removeWhitespace(text: string, mode: WhitespaceMode): WhitespaceResult {
+  const originalLength = text.length;
+  let value = text;
+  switch (mode) {
+    case 'all':
+      value = text.replace(/\s+/g, '');
+      break;
+    case 'line-breaks':
+      value = text.replace(/[\r\n]+/g, ' ');
+      break;
+    case 'extra-spaces':
+      value = text
+        .replace(/[ \t]+/g, ' ')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+      break;
+    case 'trim-lines':
+      value = text
+        .split('\n')
+        .map((line) => line.trim())
+        .join('\n')
+        .trim();
+      break;
+  }
+  return { value, removedCount: originalLength - value.length };
+}
+
+export interface FindReplaceOptions {
+  caseSensitive: boolean;
+  useRegex: boolean;
+  global: boolean;
+}
+
+export interface FindReplaceResult {
+  value: string;
+  count: number;
+  error: string | null;
+}
+
+export function findReplace(
+  text: string,
+  find: string,
+  replacement: string,
+  options: FindReplaceOptions
+): FindReplaceResult {
+  if (find.length === 0) {
+    return { value: text, count: 0, error: 'Enter a value to search for.' };
+  }
+  if (options.useRegex) {
+    try {
+      const flags = options.global ? 'g' : '';
+      const pattern = new RegExp(find, options.caseSensitive ? flags : `i${flags}`);
+      const count = (text.match(pattern) ?? []).length;
+      return { value: text.replace(pattern, replacement), count, error: null };
+    } catch (error) {
+      return {
+        value: text,
+        count: 0,
+        error: `Invalid regular expression: ${(error as Error).message}`,
+      };
+    }
+  }
+  if (!options.caseSensitive) {
+    const lowerText = text.toLowerCase();
+    const lowerFind = find.toLowerCase();
+    const indices: number[] = [];
+    let index = lowerText.indexOf(lowerFind);
+    while (index !== -1) {
+      indices.push(index);
+      index = lowerText.indexOf(lowerFind, index + find.length);
+    }
+    if (!options.global && indices.length > 1) {
+      indices.length = 1;
+    }
+    let value = '';
+    let cursor = 0;
+    for (const matchIndex of indices) {
+      value += text.slice(cursor, matchIndex) + replacement;
+      cursor = matchIndex + find.length;
+    }
+    value += text.slice(cursor);
+    return { value, count: indices.length, error: null };
+  }
+  const count = options.global ? text.split(find).length - 1 : text.includes(find) ? 1 : 0;
+  const value = options.global
+    ? text.split(find).join(replacement)
+    : text.replace(find, replacement);
+  return { value, count, error: null };
+}
+
+export interface KeywordDensityItem {
+  word: string;
+  count: number;
+  density: number;
+}
+
+const KEYWORD_MIN_LENGTH = 3;
+const KEYWORD_STOPWORDS = new Set([
+  'the',
+  'and',
+  'for',
+  'are',
+  'was',
+  'but',
+  'not',
+  'you',
+  'all',
+  'any',
+  'can',
+  'had',
+  'her',
+  'was',
+  'one',
+  'our',
+  'out',
+  'she',
+  'who',
+  'has',
+  'his',
+  'its',
+  'may',
+  'per',
+  'put',
+  'see',
+  'two',
+  'use',
+  'way',
+  'who',
+  'why',
+  'did',
+  'get',
+  'had',
+  'how',
+  'let',
+  'nor',
+  'off',
+  'old',
+  'too',
+  'yet',
+  'now',
+  'own',
+  'try',
+  'via',
+  'the',
+  'this',
+  'that',
+  'with',
+  'from',
+  'have',
+  'they',
+  'them',
+  'then',
+  'than',
+  'will',
+  'would',
+  'there',
+  'their',
+  'which',
+  'what',
+  'when',
+  'where',
+  'were',
+  'been',
+  'being',
+  'more',
+  'most',
+  'some',
+  'such',
+  'only',
+  'other',
+  'about',
+]);
+
+export function keywordDensity(text: string, limit = 25): KeywordDensityItem[] {
+  const words = text.toLowerCase().match(/[a-z0-9']+/g) ?? [];
+  const total = words.length;
+  if (total === 0) return [];
+  const counts = new Map<string, number>();
+  for (const word of words) {
+    if (word.length < KEYWORD_MIN_LENGTH) continue;
+    if (KEYWORD_STOPWORDS.has(word)) continue;
+    counts.set(word, (counts.get(word) ?? 0) + 1);
+  }
+  return [...counts.entries()]
+    .map(([word, count]) => ({ word, count, density: (count / total) * 100 }))
+    .sort((a, b) => b.count - a.count || a.word.localeCompare(b.word))
+    .slice(0, limit);
+}

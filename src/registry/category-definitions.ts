@@ -301,6 +301,42 @@ export const dynamicCategoryDefinitions: CategoryDefinition[] = [
     displayOrder: 18,
   },
   {
+    id: 'cat-converters',
+    slug: 'converters',
+    title: 'Converters',
+    shortDescription: 'Unit, currency, format, and data type converters for developers.',
+    longDescription:
+      'Converter tools handle unit conversions, format transformations, and data encoding/decoding. From currency and file size to color formats and coordinate systems, these tools eliminate manual calculations and format mismatches.',
+    icon: 'rotate-ccw',
+    color: 'amber',
+    keywords: ['converter', 'unit', 'currency', 'format', 'transform', 'unit conversion'],
+    seo: {
+      keywords: [
+        'unit converter',
+        'currency converter',
+        'file size converter',
+        'color converter',
+        'format converter',
+      ],
+    },
+    featuredTools: [],
+    relatedCategories: ['encoding', 'numbers', 'text', 'color', 'web'],
+    featuredArticles: [],
+    faqs: [
+      {
+        question: 'What types of conversions are supported?',
+        answer:
+          'Length, weight, data size, temperature, speed, currency, color formats (HEX/RGB/HSL/CMYK), coordinates, file size, and more.',
+      },
+      {
+        question: 'Are exchange rates real-time?',
+        answer:
+          'Currency rates are updated hourly from a reliable financial API. For official transactions, verify with your bank.',
+      },
+    ],
+    displayOrder: 18.5,
+  },
+  {
     id: 'cat-encoding',
     slug: 'encoding',
     title: 'Encoding',
@@ -714,5 +750,111 @@ export const dynamicCategoryDefinitions: CategoryDefinition[] = [
       },
     ],
     displayOrder: 30,
+  },
+  {
+    id: 'cat-css',
+    slug: 'css',
+    title: 'CSS & Design Generators',
+    shortDescription:
+      'Visual generators for gradients, shadows, animations, and other CSS utilities.',
+    longDescription:
+      'Write less CSS by generating it. From gradients and box shadows to animations, glassmorphism, and SVG shapes, these visual tools output copy-paste-ready code with live previews so your styles are consistent every time.',
+    icon: 'brush',
+    color: 'violet',
+    keywords: ['css', 'design', 'generator', 'animation', 'styles'],
+    seo: {
+      keywords: [
+        'css generator',
+        'css animation generator',
+        'glassmorphism generator',
+        'css specificity calculator',
+      ],
+    },
+    featuredTools: [],
+    relatedCategories: ['color', 'images', 'design', 'frontend'],
+    featuredArticles: [],
+    faqs: [
+      {
+        question: 'Are these generators safe to use in production?',
+        answer:
+          'Yes — every generator outputs standards-compliant CSS that works in all modern browsers. Preview the result live before copying the code into your stylesheet.',
+      },
+      {
+        question: 'What about browser prefixes?',
+        answer:
+          'Modern browsers no longer need vendor prefixes for most properties. Where prefixes are still recommended, the generated code includes them.',
+      },
+    ],
+    displayOrder: 31,
+  },
+  {
+    id: 'cat-accessibility',
+    slug: 'accessibility',
+    title: 'Accessibility',
+    shortDescription: 'Readability scoring, ARIA references, and checks for accessible content.',
+    longDescription:
+      'Build for everyone. Score the readability of your copy, check alt text quality, and look up ARIA roles and attributes with practical usage notes — so your interfaces meet WCAG standards without the guesswork.',
+    icon: 'accessibility',
+    color: 'emerald',
+    keywords: ['accessibility', 'a11y', 'readability', 'aria', 'wcag'],
+    seo: {
+      keywords: [
+        'readability score',
+        'flesch reading ease',
+        'aria roles reference',
+        'alt text checker',
+      ],
+    },
+    featuredTools: [],
+    relatedCategories: ['color', 'web', 'text', 'frontend'],
+    featuredArticles: [],
+    faqs: [
+      {
+        question: 'What is the Flesch Reading Ease score?',
+        answer:
+          'A score from 0 to 100 that estimates how easy text is to read. Higher scores mean simpler text; 60 to 70 is roughly plain English.',
+      },
+      {
+        question: 'Why does ARIA matter?',
+        answer:
+          'ARIA attributes help assistive technology understand interactive elements. Use them to fix accessibility gaps — not to replace native HTML semantics.',
+      },
+    ],
+    displayOrder: 32,
+  },
+  {
+    id: 'cat-generators',
+    slug: 'generators',
+    title: 'Random & Fake Data Generators',
+    shortDescription: 'Random generators, dice rollers, and mock data tools for testing and demos.',
+    longDescription:
+      'Everything you need to fill test pipelines and sprinkle randomness into demos: realistic fake people and mock data rows, dice rolls, coin flips, and random colors — all generated locally in your browser.',
+    icon: 'dices',
+    color: 'rose',
+    keywords: ['generator', 'random', 'fake data', 'mock data', 'dice'],
+    seo: {
+      keywords: [
+        'fake data generator',
+        'mock data generator',
+        'dice roller',
+        'random color generator',
+      ],
+    },
+    featuredTools: [],
+    relatedCategories: ['databases', 'numbers', 'text', 'testing'],
+    featuredArticles: [],
+    faqs: [
+      {
+        question: 'Is the generated data realistic?',
+        answer:
+          'Yes — fake people, emails, addresses, and data rows are built from realistic name, city, and domain pools, ready for seeding test databases.',
+      },
+      {
+        question: 'Is anything sent to a server?',
+        answer:
+          'No. All random and fake data is generated entirely in your browser for privacy and speed.',
+      },
+    ],
+    displayOrder: 33,
   },
 ];

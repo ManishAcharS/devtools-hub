@@ -246,3 +246,90 @@ export function fromRoman(input: string): RomanResult {
 }
 
 const numeralValues: Record<string, number> = { M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1 };
+
+export interface PrimeCheckResult {
+  isPrime: boolean;
+  divisibility: number[] | null;
+  factors: { factor: number; exponent: number }[];
+}
+
+export function isPrime(value: number): boolean {
+  if (!Number.isInteger(value) || value < 2) return false;
+  if (value < 4) return true;
+  if (value % 2 === 0 || value % 3 === 0) return false;
+  const limit = Math.floor(Math.sqrt(value));
+  for (let divisor = 5; divisor <= limit; divisor += 6) {
+    if (value % divisor === 0 || value % (divisor + 2) === 0) return false;
+  }
+  return true;
+}
+
+export function primeFactors(value: number): { factor: number; exponent: number }[] {
+  if (!Number.isInteger(value) || value <= 1) return [];
+  let working = value;
+  const result: { factor: number; exponent: number }[] = [];
+  for (let divisor = 2; divisor * divisor <= working; divisor += 1) {
+    if (working % divisor !== 0) continue;
+    let exponent = 0;
+    while (working % divisor === 0) {
+      working /= divisor;
+      exponent += 1;
+    }
+    result.push({ factor: divisor, exponent });
+  }
+  if (working > 1) {
+    result.push({ factor: working, exponent: 1 });
+  }
+  return result;
+}
+
+export function checkPrime(value: number): PrimeCheckResult {
+  if (!Number.isInteger(value)) {
+    return {
+      isPrime: false,
+      divisibility: null,
+      factors: [],
+      // The component uses this shape; keep a helper for message rendering.
+    };
+  }
+  if (value < 2) {
+    return { isPrime: false, divisibility: [], factors: [] };
+  }
+  if (value < 4) {
+    return { isPrime: true, divisibility: [], factors: [] };
+  }
+  const divisibility = primeFactors(value)
+    .filter(({ factor }) => factor !== value)
+    .map(({ factor }) => factor);
+  return { isPrime: divisibility.length === 0, divisibility, factors: primeFactors(value) };
+}
+
+export function gcd(a: number, b: number): number {
+  const x = Math.abs(Math.trunc(a));
+  const y = Math.abs(Math.trunc(b));
+  let first = Math.max(x, y);
+  let second = Math.min(x, y);
+  while (second !== 0) {
+    const remainder = first % second;
+    first = second;
+    second = remainder;
+  }
+  return first;
+}
+
+export function lcm(a: number, b: number): number {
+  const x = Math.abs(Math.trunc(a));
+  const y = Math.abs(Math.trunc(b));
+  if (x === 0 || y === 0) return 0;
+  return (x / gcd(x, y)) * y;
+}
+
+export function gcdAll(values: number[]): number {
+  if (values.length === 0) return 0;
+  return values.reduce((acc, value) => gcd(acc, value));
+}
+
+export function lcmAll(values: number[]): number {
+  if (values.length === 0) return 0;
+  return values.reduce((acc, value) => lcm(acc, value), 1);
+}

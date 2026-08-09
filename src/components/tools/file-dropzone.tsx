@@ -10,6 +10,7 @@ interface FileDropzoneProps {
   onFiles: (files: File[]) => void;
   accept?: string;
   multiple?: boolean;
+  maxFiles?: number;
   disabled?: boolean;
   hint?: string;
   label?: string;
