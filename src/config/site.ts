@@ -1,20 +1,17 @@
 import type { NavigationItem, SiteConfig } from '@/types';
 
 export const siteConfig: SiteConfig = {
-  name: 'DevTools Hub',
+  name: 'Toolbox for Devs',
   description:
     'Discover and compare the best developer tools, resources, and learning materials. Your ultimate toolkit for modern software development.',
-  url: 'https://devtoolshub.io',
+  url: 'https://toolboxfordevs.vercel.app',
   ogImage: '/og-image.png',
   links: {
-    twitter: 'https://twitter.com/devtoolshub',
-    github: 'https://github.com/devtoolshub',
-    discord: 'https://discord.gg/devtoolshub',
-    linkedin: 'https://linkedin.com/company/devtoolshub',
+    github: 'https://github.com/manishthelegend99/toolboxfordevs',
   },
   author: {
-    name: 'DevTools Hub Team',
-    email: 'hello@devtoolshub.io',
+    name: 'Toolbox for Devs Team',
+    email: 'manishthelegend99@gmail.com',
   },
   theme: {
     colors: {
@@ -233,10 +230,10 @@ export const footerNavigation = {
     { label: 'Security', href: '/security' },
   ],
   social: [
-    { label: 'Twitter', href: 'https://twitter.com/devtoolshub', external: true },
-    { label: 'GitHub', href: 'https://github.com/devtoolshub', external: true },
-    { label: 'Discord', href: 'https://discord.gg/devtoolshub', external: true },
-    { label: 'LinkedIn', href: 'https://linkedin.com/company/devtoolshub', external: true },
-    { label: 'YouTube', href: 'https://youtube.com/@devtoolshub', external: true },
+    {
+      label: 'GitHub',
+      href: 'https://github.com/manishthelegend99/toolboxfordevs',
+      external: true,
+    },
   ],
 };

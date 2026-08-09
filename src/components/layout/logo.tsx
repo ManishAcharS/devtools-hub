@@ -39,7 +39,8 @@ const Logo: React.FC<LogoProps> = ({
       </span>
       {showText && (
         <span className={cn('font-bold tracking-tight', s.text, textColor)}>
-          DevTools<span className="text-primary">Hub</span>
+          Toolbox<span className="text-muted-foreground"> for </span>
+          <span className="text-primary">Devs</span>
         </span>
       )}
     </>
@@ -49,7 +50,7 @@ const Logo: React.FC<LogoProps> = ({
     <Link
       href={href}
       className={cn('flex shrink-0 items-center gap-2', s.container, className)}
-      aria-label="DevTools Hub - Home"
+      aria-label="Toolbox for Devs - Home"
     >
       {content}
     </Link>

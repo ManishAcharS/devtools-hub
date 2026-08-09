@@ -1,14 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import {
-  Mail,
-  MessageSquare,
-  Github,
-  Twitter,
-  HelpCircle,
-  LifeBuoy,
-  type LucideIcon,
-} from 'lucide-react';
+import { Mail, Github, HelpCircle, LifeBuoy, type LucideIcon } from 'lucide-react';
 import { createMetadata } from '@/lib/seo';
 import { PageHeader } from '@/components/shared/page-header';
 import { ContactForm } from '@/components/shared/contact-form';
@@ -17,7 +9,7 @@ import { siteConfig } from '@/config/site';
 export const metadata: Metadata = createMetadata({
   title: 'Contact',
   description:
-    'Get in touch with the DevTools Hub team — tool suggestions, feedback, partnerships, or support.',
+    'Get in touch with the Toolbox for Devs team — tool suggestions, feedback, partnerships, or support.',
   canonical: '/contact',
 });
 
@@ -30,27 +22,11 @@ const channels: {
   external: boolean;
 }[] = [
   {
-    icon: MessageSquare,
-    title: 'General & feedback',
-    description: 'Questions, feedback, or a tool you love that we missed.',
-    href: siteConfig.links.discord,
-    label: 'Join our Discord',
-    external: true,
-  },
-  {
     icon: Github,
     title: 'Report an issue',
     description: 'Found a bug or outdated info? Open an issue on GitHub.',
     href: siteConfig.links.github,
     label: 'Open GitHub',
-    external: true,
-  },
-  {
-    icon: Twitter,
-    title: 'Follow us',
-    description: 'Announcements, curated picks, and community highlights.',
-    href: siteConfig.links.twitter,
-    label: 'Follow on X',
     external: true,
   },
   {

@@ -165,7 +165,11 @@ function scanJsonForError(text: string): number | null {
       continue;
     }
     if (ch === '}' || ch === ']') {
-      if (ch === ']' && top.type === 'arr' && top.anyValue === false) {
+      if (
+        top &&
+        ((ch === '}' && top.type === 'obj') || (ch === ']' && top.type === 'arr')) &&
+        top.anyValue === false
+      ) {
         stack.pop();
         i += 1;
         mode = stack.length === 0 ? 'done' : 'comma';
@@ -173,6 +177,7 @@ function scanJsonForError(text: string): number | null {
       }
       return i;
     }
+    if (!top) return i;
     top.anyValue = true;
     if (ch === '"') {
       if (!parseString()) return i;
@@ -303,7 +308,6 @@ function buildXml(
 ): string {
   const { rootName = 'root', arrayItemName = 'item', indent = '  ', level = 0 } = options;
   const padding = indent.repeat(level);
-  const nextPadding = indent.repeat(level + 1);
 
   if (value === null) {
     return `${padding}<${rootName} xsi:nil="true"/>`;

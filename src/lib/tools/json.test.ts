@@ -20,6 +20,22 @@ describe('parseJson', () => {
     expect(result.line).toBe(3);
     expect(result.column).toBeGreaterThan(0);
   });
+
+  it('does not throw on top-level garbage', () => {
+    expect(() => parseJson('!!!not-valid-at-all@@@###')).not.toThrow();
+    expect(parseJson('!!!not-valid-at-all@@@###').ok).toBe(false);
+  });
+
+  it('does not throw on a lone closing bracket', () => {
+    expect(() => parseJson(']')).not.toThrow();
+    expect(parseJson(']').ok).toBe(false);
+  });
+
+  it('handles huge malformed input without crashing', () => {
+    const huge = 'x'.repeat(100_000) + '\n'.repeat(200);
+    expect(() => parseJson(huge)).not.toThrow();
+    expect(parseJson(huge).ok).toBe(false);
+  });
 });
 
 describe('formatJson', () => {

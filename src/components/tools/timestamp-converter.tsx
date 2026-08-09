@@ -87,8 +87,8 @@ const TimestampConverter: React.FC<ToolComponentProps> = () => {
             Now
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-1 font-mono text-sm">
-            <span>{nowValues.seconds}</span>
-            <span>{nowValues.isoUtc}</span>
+            <span suppressHydrationWarning>{nowValues.seconds}</span>
+            <span suppressHydrationWarning>{nowValues.isoUtc}</span>
           </div>
         </div>
         <div className="bg-muted mt-3 h-px" />
@@ -100,7 +100,9 @@ const TimestampConverter: React.FC<ToolComponentProps> = () => {
             <div key={item.label} className="flex items-center justify-between gap-2">
               <span className="text-muted-foreground text-xs">{item.label}</span>
               <div className="flex items-center gap-2">
-                <code className="text-foreground font-mono text-sm">{item.value}</code>
+                <code suppressHydrationWarning className="text-foreground font-mono text-sm">
+                  {item.value}
+                </code>
                 <CopyButton value={item.value} label="Copy" size="sm" iconOnly />
               </div>
             </div>

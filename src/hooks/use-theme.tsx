@@ -21,7 +21,7 @@ interface ThemeContextValue {
   resolvedTheme: Theme;
 }
 
-const STORAGE_KEY = 'devtools-hub-theme';
+const STORAGE_KEY = 'toolboxfordevs-theme';
 const SYSTEM_QUERY = '(prefers-color-scheme: dark)';
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);

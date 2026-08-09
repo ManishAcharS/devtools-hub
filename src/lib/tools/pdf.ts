@@ -358,8 +358,8 @@ export async function createPdfFromImages(
   }
 
   const title = options.title ?? 'Merged document';
-  const author = options.author ?? 'DevTools Hub';
-  const producer = options.producer ?? 'DevTools Hub PDF Utilities';
+  const author = options.author ?? 'Toolbox for Devs';
+  const producer = options.producer ?? 'Toolbox for Devs PDF Utilities';
   const now = new Date();
   const dateStamp = 'D:' + now.toISOString().replace(/[-:]/g, '').replace(/\..+/, '');
   objects.push(

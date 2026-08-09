@@ -1,14 +1,7 @@
 import type { Metadata } from 'next';
 import type { ToolDefinition, BlogPost, CategoryDefinition } from '@/types';
 import type { CategoryLike } from './related';
-import {
-  SITE_URL,
-  SITE_NAME,
-  SITE_DESCRIPTION,
-  DEFAULT_OG_IMAGE,
-  TWITTER_HANDLE,
-  SEO_CONSTANTS,
-} from './config';
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, DEFAULT_OG_IMAGE, SEO_CONSTANTS } from './config';
 
 export function absoluteUrl(path: string): string {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
@@ -95,8 +88,6 @@ export function createMetadata({
       title: fullTitle,
       description,
       images: [ogImage.url],
-      site: TWITTER_HANDLE,
-      creator: TWITTER_HANDLE,
     },
     robots: defaultRobots(noIndex),
   };

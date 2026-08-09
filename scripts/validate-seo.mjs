@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * SEO validation for DevTools Hub.
+ * SEO validation for Toolbox for Devs.
  *
  * Walks the static build output (.next/server/app) and asserts every
  * prerendered page includes: <title>, meta description, canonical link,
@@ -61,7 +61,7 @@ function toUrl(relativePath) {
     .replace(/\/?index$/, '')
     .replace(/^\/+/, '');
   const path = route === '' ? '' : `/${route}`;
-  return `https://devtoolshub.io${path}`;
+  return `https://toolboxfordevs.vercel.app${path}`;
 }
 
 function stripHtmlEntities(html) {

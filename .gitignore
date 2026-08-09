@@ -12,6 +12,9 @@
 
 # testing
 /coverage
+/e2e-results/
+/test-results/
+/playwright-report/
 
 # next.js
 /.next/
@@ -42,3 +45,7 @@ next-env.d.ts
 
 # husky
 .husky/_
+
+# server logs
+/logs/
+*.log

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Twitter, Linkedin, MessageCircle, Youtube, Heart } from 'lucide-react';
+import { Github, Heart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/layout/logo';
 import { footerNavigation, siteConfig } from '@/config/site';
@@ -10,11 +10,7 @@ interface FooterProps {
 }
 
 const socialIcons = {
-  twitter: Twitter,
   github: Github,
-  discord: MessageCircle,
-  linkedin: Linkedin,
-  youtube: Youtube,
 } as const;
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
@@ -41,7 +37,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover-glow text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg p-2 transition-colors"
-                    aria-label={`DevTools Hub on ${name}`}
+                    aria-label={`Toolbox for Devs on ${name}`}
                   >
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </a>

@@ -3,7 +3,7 @@
 import { useCallback, useMemo } from 'react';
 import { useLocalStorage } from '@/hooks/use-storage';
 
-const HISTORY_KEY = 'devtools-hub-search-history';
+const HISTORY_KEY = 'toolboxfordevs-search-history';
 const MAX_HISTORY = 8;
 
 export function useSearchHistory() {

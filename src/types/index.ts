@@ -242,9 +242,9 @@ export interface SiteConfig {
   url: string;
   ogImage: string;
   links: {
-    twitter: string;
     github: string;
-    discord: string;
+    twitter?: string;
+    discord?: string;
     linkedin?: string;
   };
   author: {

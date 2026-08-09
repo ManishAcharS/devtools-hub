@@ -11,7 +11,7 @@ import { siteConfig } from '@/config/site';
 export const metadata: Metadata = createMetadata({
   title: 'About Us',
   description:
-    'DevTools Hub is a curated directory of developer tools, resources, and learning materials — built by developers, for developers.',
+    'Toolbox for Devs is a curated directory of developer tools, resources, and learning materials — built by developers, for developers.',
   canonical: '/about',
 });
 
@@ -56,7 +56,7 @@ export default function AboutPage() {
         <PageHeader
           icon={<Info className="h-6 w-6" aria-hidden="true" />}
           title="About Us"
-          description="The story, mission, and principles behind DevTools Hub."
+          description="The story, mission, and principles behind Toolbox for Devs."
           breadcrumb={[{ label: 'About', current: true }]}
         />
 
@@ -78,7 +78,7 @@ export default function AboutPage() {
                 our migrations painless, the CI service that finally made builds reliable, the
                 testing framework that ended flaky suites. That list lived in a shared note and grew
                 every month. We realized a public, structured version of it would help everyone — so
-                we built DevTools Hub.
+                we built Toolbox for Devs.
               </p>
 
               <h2>How the directory works</h2>

@@ -1,5 +1,5 @@
 {
-  "name": "devtools-hub",
+  "name": "toolboxfordevs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "validate:seo": "node scripts/validate-seo.mjs",
+    "test:e2e": "playwright test",
     "prepare": "husky"
   },
   "dependencies": {

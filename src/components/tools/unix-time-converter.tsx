@@ -46,13 +46,17 @@ const UnixTimeConverter: React.FC<ToolComponentProps> = () => {
             <div key={item.value} className="bg-muted rounded-lg p-3">
               <p className="text-muted-foreground text-xs">{item.label}</p>
               <div className="mt-1 flex items-center justify-between gap-2">
-                <code className="text-foreground font-mono text-sm">{nowValues[item.value]}</code>
+                <code suppressHydrationWarning className="text-foreground font-mono text-sm">
+                  {nowValues[item.value]}
+                </code>
                 <CopyButton value={nowValues[item.value]} label="Copy" size="sm" iconOnly />
               </div>
             </div>
           ))}
         </div>
-        <p className="text-muted-foreground mt-3 text-xs">Updates live. {nowValues.isoUtc}</p>
+        <p className="text-muted-foreground mt-3 text-xs">
+          Updates live. <span suppressHydrationWarning>{nowValues.isoUtc}</span>
+        </p>
       </div>
 
       <div className="border-border bg-card rounded-xl border p-5">

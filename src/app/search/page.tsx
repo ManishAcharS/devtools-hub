@@ -6,7 +6,7 @@ import type { SearchItemType } from '@/search';
 
 export const metadata: Metadata = createNoIndexMetadata(
   'Search',
-  'Search tools, categories, blog posts, and resources across DevTools Hub.'
+  'Search tools, categories, blog posts, and resources across Toolbox for Devs.'
 );
 
 interface SearchPageProps {

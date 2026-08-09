@@ -107,7 +107,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                   href={siteConfig.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="DevTools Hub on GitHub"
+                  aria-label="Toolbox for Devs on GitHub"
                 >
                   <Github className="h-4 w-4" aria-hidden="true" />
                 </a>

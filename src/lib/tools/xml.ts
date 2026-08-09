@@ -40,6 +40,9 @@ function extractParserError(text: string): ParserErrorInfo {
   if (lineMatch && columnMatch) {
     message = message.replace(/[Ll]ine \d+,?[Cc]olumn \d+[:\s]*/i, '').trim();
   }
+  if (message.length > 1000) {
+    message = message.slice(0, 1000) + '…';
+  }
   return {
     message: message || 'The document is not well-formed XML.',
     line: lineMatch ? Number(lineMatch[1]) : undefined,
@@ -48,19 +51,19 @@ function extractParserError(text: string): ParserErrorInfo {
 }
 
 export function parseXml(source: string): XmlParseResult {
+  if (source.trim().length === 0) {
+    return {
+      doc: null,
+      error: 'Input is empty. Paste an XML document to parse it.',
+      issues: [{ message: 'Input is empty. Paste an XML document to parse it.' }],
+    };
+  }
   const parser = getParser();
   if (!parser) {
     return {
       doc: null,
       error: 'XML parsing is not available in this environment.',
       issues: [{ message: 'XML parsing requires a browser environment.' }],
-    };
-  }
-  if (source.trim().length === 0) {
-    return {
-      doc: null,
-      error: 'Input is empty. Paste an XML document to parse it.',
-      issues: [{ message: 'Input is empty. Paste an XML document to parse it.' }],
     };
   }
   const doc = parser.parseFromString(source, 'application/xml');

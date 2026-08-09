@@ -199,7 +199,12 @@ const ApiKeyGenerator: React.FC<ToolComponentProps> = () => {
               key={key}
               className="border-border bg-background flex items-center justify-between gap-3 rounded-lg border px-4 py-2"
             >
-              <code className="text-foreground font-mono text-sm break-all">{key}</code>
+              <code
+                suppressHydrationWarning
+                className="text-foreground font-mono text-sm break-all"
+              >
+                {key}
+              </code>
               <CopyButton value={key} label="Copy" size="sm" iconOnly />
             </li>
           ))}

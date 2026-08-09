@@ -1,4 +1,4 @@
-# DevTools Hub
+# Toolbox for Devs
 
 A production-ready foundation for a scalable developer platform — discover, compare, and master the best developer tools, resources, and learning materials.
 

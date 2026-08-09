@@ -138,7 +138,8 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ open, onClose }) =>
             <span className="from-primary to-accent flex items-center justify-center rounded-lg bg-gradient-to-br p-1.5 text-white">
               <Wrench className="h-4 w-4" aria-hidden="true" />
             </span>
-            DevTools<span className="text-primary">Hub</span>
+            Toolbox<span className="text-muted-foreground"> for </span>
+            <span className="text-primary">Devs</span>
           </span>
           <button
             onClick={onClose}
@@ -159,7 +160,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ open, onClose }) =>
               Search
             </Link>
             <a
-              href="https://github.com/devtoolshub"
+              href="https://github.com/manishthelegend99/toolboxfordevs"
               target="_blank"
               rel="noopener noreferrer"
               className="hover-glow text-muted-foreground hover:bg-muted hover:text-foreground flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-colors"

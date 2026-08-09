@@ -114,7 +114,7 @@ const FIELDS: Record<SchemaType, FieldDef[]> = {
     },
   ],
   WebSite: [
-    { key: 'name', label: 'Name', kind: 'text', placeholder: 'DevTools Hub' },
+    { key: 'name', label: 'Name', kind: 'text', placeholder: 'Toolbox for Devs' },
     { key: 'url', label: 'Website URL', kind: 'url', placeholder: 'https://example.com' },
     { key: 'description', label: 'Description', kind: 'textarea', placeholder: 'Site description' },
     {
