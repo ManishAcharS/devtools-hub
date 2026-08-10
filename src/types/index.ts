@@ -243,6 +243,7 @@ export interface SiteConfig {
   ogImage: string;
   links: {
     github: string;
+    youtube?: string;
     twitter?: string;
     discord?: string;
     linkedin?: string;

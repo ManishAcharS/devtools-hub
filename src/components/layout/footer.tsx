@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Heart } from 'lucide-react';
+import { Github, Heart, Youtube } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/layout/logo';
 import { footerNavigation, siteConfig } from '@/config/site';
@@ -11,6 +11,7 @@ interface FooterProps {
 
 const socialIcons = {
   github: Github,
+  youtube: Youtube,
 } as const;
 
 const Footer: React.FC<FooterProps> = ({ className }) => {

@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Github, Star, Search, Command } from 'lucide-react';
+import { Menu, Github, Youtube, Star, Search, Command } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/layout/logo';
 import { DesktopNavigation } from '@/components/layout/desktop-navigation';
@@ -112,6 +112,18 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                   <Github className="h-4 w-4" aria-hidden="true" />
                 </a>
               </Button>
+              {siteConfig.links.youtube && (
+                <Button variant="outline" size="icon-sm" asChild className="hidden sm:inline-flex">
+                  <a
+                    href={siteConfig.links.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Toolbox for Devs on YouTube"
+                  >
+                    <Youtube className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                </Button>
+              )}
               <Button size="sm" className="hidden md:inline-flex">
                 <Star className="h-4 w-4" aria-hidden="true" />
                 Star us

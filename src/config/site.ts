@@ -8,6 +8,7 @@ export const siteConfig: SiteConfig = {
   ogImage: '/og-image.png',
   links: {
     github: 'https://github.com/ManishAcharS/toolboxfordevs',
+    youtube: 'https://www.youtube.com/@toolboxfordevs',
   },
   author: {
     name: 'Toolbox for Devs Team',
@@ -233,6 +234,11 @@ export const footerNavigation = {
     {
       label: 'GitHub',
       href: 'https://github.com/ManishAcharS/toolboxfordevs',
+      external: true,
+    },
+    {
+      label: 'YouTube',
+      href: 'https://www.youtube.com/@toolboxfordevs',
       external: true,
     },
   ],

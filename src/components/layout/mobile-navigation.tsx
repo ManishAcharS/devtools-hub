@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, X, ExternalLink, Wrench } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { mainNavigation } from '@/config/site';
+import { mainNavigation, siteConfig } from '@/config/site';
 import { useLockBody } from '@/hooks/use-interaction';
 import type { NavigationItem } from '@/types';
 
@@ -160,7 +160,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ open, onClose }) =>
               Search
             </Link>
             <a
-              href="https://github.com/ManishAcharS/toolboxfordevs"
+              href={siteConfig.links.github}
               target="_blank"
               rel="noopener noreferrer"
               className="hover-glow text-muted-foreground hover:bg-muted hover:text-foreground flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-colors"
@@ -168,6 +168,17 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ open, onClose }) =>
               GitHub
               <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
             </a>
+            {siteConfig.links.youtube && (
+              <a
+                href={siteConfig.links.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover-glow text-muted-foreground hover:bg-muted hover:text-foreground flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-colors"
+              >
+                YouTube
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            )}
           </div>
         </nav>
       </aside>

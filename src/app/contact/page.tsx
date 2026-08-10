@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Mail, Github, HelpCircle, LifeBuoy, type LucideIcon } from 'lucide-react';
+import { Mail, Github, Youtube, HelpCircle, LifeBuoy, type LucideIcon } from 'lucide-react';
 import { createMetadata } from '@/lib/seo';
 import { PageHeader } from '@/components/shared/page-header';
 import { ContactForm } from '@/components/shared/contact-form';
@@ -27,6 +27,14 @@ const channels: {
     description: 'Found a bug or outdated info? Open an issue on GitHub.',
     href: siteConfig.links.github,
     label: 'Open GitHub',
+    external: true,
+  },
+  {
+    icon: Youtube,
+    title: 'YouTube channel',
+    description: 'Watch tutorials, tool walkthroughs, and dev tips on our channel.',
+    href: siteConfig.links.youtube ?? 'https://www.youtube.com/@toolboxfordevs',
+    label: 'Visit the channel',
     external: true,
   },
   {
