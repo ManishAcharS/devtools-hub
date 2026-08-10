@@ -73,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           className
         )}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[1440px]">
           <div className="flex h-16 items-center gap-3">
             <div className="flex min-w-0 flex-1 items-center gap-2.5">
               <button
@@ -88,11 +88,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
             <DesktopNavigation />
 
-            <div className="flex min-w-0 flex-1 items-center justify-end gap-1.5">
+            <div className="flex flex-1 items-center justify-end gap-1.5">
               <button
                 type="button"
                 onClick={openSearch}
-                className="border-border bg-background text-muted-foreground hover:text-foreground focus-within:border-primary/50 focus-within:ring-primary/20 hidden h-9 w-56 shrink-0 items-center gap-3 rounded-xl border px-3 text-sm transition-all focus-within:ring-2 focus-visible:outline-none xl:flex"
+                className="border-border bg-background text-muted-foreground hover:text-foreground focus-within:border-primary/50 focus-within:ring-primary/20 hidden h-9 w-44 shrink-0 items-center gap-3 rounded-xl border px-3 text-sm transition-all focus-within:ring-2 focus-visible:outline-none xl:flex"
                 aria-label="Open search"
               >
                 <Search className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
