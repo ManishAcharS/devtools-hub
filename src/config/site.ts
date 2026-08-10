@@ -9,6 +9,7 @@ export const siteConfig: SiteConfig = {
   links: {
     github: 'https://github.com/ManishAcharS/toolboxfordevs',
     youtube: 'https://www.youtube.com/@toolboxfordevs',
+    instagram: 'https://www.instagram.com/toolboxfordevs/',
   },
   author: {
     name: 'Toolbox for Devs Team',
@@ -239,6 +240,11 @@ export const footerNavigation = {
     {
       label: 'YouTube',
       href: 'https://www.youtube.com/@toolboxfordevs',
+      external: true,
+    },
+    {
+      label: 'Instagram',
+      href: 'https://www.instagram.com/toolboxfordevs/',
       external: true,
     },
   ],

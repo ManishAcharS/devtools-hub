@@ -1,6 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Mail, Github, Youtube, HelpCircle, LifeBuoy, type LucideIcon } from 'lucide-react';
+import {
+  Mail,
+  Github,
+  Youtube,
+  Instagram,
+  HelpCircle,
+  LifeBuoy,
+  type LucideIcon,
+} from 'lucide-react';
 import { createMetadata } from '@/lib/seo';
 import { PageHeader } from '@/components/shared/page-header';
 import { ContactForm } from '@/components/shared/contact-form';
@@ -35,6 +43,14 @@ const channels: {
     description: 'Watch tutorials, tool walkthroughs, and dev tips on our channel.',
     href: siteConfig.links.youtube ?? 'https://www.youtube.com/@toolboxfordevs',
     label: 'Visit the channel',
+    external: true,
+  },
+  {
+    icon: Instagram,
+    title: 'Instagram',
+    description: 'Follow us for tool highlights, tips, and behind-the-scenes content.',
+    href: siteConfig.links.instagram ?? 'https://www.instagram.com/toolboxfordevs/',
+    label: 'Follow us',
     external: true,
   },
   {

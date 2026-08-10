@@ -179,6 +179,17 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ open, onClose }) =>
                 <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
               </a>
             )}
+            {siteConfig.links.instagram && (
+              <a
+                href={siteConfig.links.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover-glow text-muted-foreground hover:bg-muted hover:text-foreground flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-colors"
+              >
+                Instagram
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            )}
           </div>
         </nav>
       </aside>

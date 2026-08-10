@@ -244,6 +244,7 @@ export interface SiteConfig {
   links: {
     github: string;
     youtube?: string;
+    instagram?: string;
     twitter?: string;
     discord?: string;
     linkedin?: string;
