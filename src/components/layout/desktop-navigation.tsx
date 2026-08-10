@@ -43,8 +43,12 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({ className }) => {
   };
 
   return (
-    <nav ref={navRef} aria-label="Primary navigation" className={cn('hidden lg:block', className)}>
-      <ul className="flex items-center gap-1">
+    <nav
+      ref={navRef}
+      aria-label="Primary navigation"
+      className={cn('hidden shrink-0 lg:block', className)}
+    >
+      <ul className="flex items-center gap-0.5">
         {mainNavigation.map((item) => {
           const active = isActive(item);
           const hasMegaMenu = !!item.megaMenu;
@@ -62,7 +66,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({ className }) => {
                   aria-haspopup={hasMegaMenu ? 'menu' : undefined}
                   onMouseEnter={() => !hasMegaMenu && undefined}
                   className={cn(
-                    'hover-glow inline-flex items-center gap-1 rounded-lg px-2.5 py-2 text-sm font-medium whitespace-nowrap transition-colors',
+                    'hover-glow inline-flex shrink-0 items-center gap-1 rounded-lg px-2 py-2 text-sm font-medium whitespace-nowrap transition-colors',
                     active
                       ? 'text-primary bg-primary/10'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted'

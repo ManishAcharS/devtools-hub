@@ -88,11 +88,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
             <DesktopNavigation />
 
-            <div className="flex min-w-0 flex-1 items-center justify-end gap-2">
+            <div className="flex min-w-0 flex-1 items-center justify-end gap-1.5">
               <button
                 type="button"
                 onClick={openSearch}
-                className="border-border bg-background text-muted-foreground hover:text-foreground focus-within:border-primary/50 focus-within:ring-primary/20 hidden h-9 w-64 items-center gap-3 rounded-xl border px-3 text-sm transition-all focus-within:ring-2 focus-visible:outline-none xl:flex"
+                className="border-border bg-background text-muted-foreground hover:text-foreground focus-within:border-primary/50 focus-within:ring-primary/20 hidden h-9 w-56 shrink-0 items-center gap-3 rounded-xl border px-3 text-sm transition-all focus-within:ring-2 focus-visible:outline-none xl:flex"
                 aria-label="Open search"
               >
                 <Search className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
@@ -101,8 +101,15 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                   <Command className="h-3 w-3" aria-hidden="true" />K
                 </kbd>
               </button>
-              <ThemeToggle />
-              <Button variant="outline" size="icon-sm" asChild className="hidden 2xl:inline-flex">
+              <span className="flex shrink-0">
+                <ThemeToggle />
+              </span>
+              <Button
+                variant="outline"
+                size="icon-sm"
+                asChild
+                className="hidden shrink-0 2xl:inline-flex"
+              >
                 <a
                   href={siteConfig.links.github}
                   target="_blank"
@@ -113,7 +120,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 </a>
               </Button>
               {siteConfig.links.youtube && (
-                <Button variant="outline" size="icon-sm" asChild className="hidden 2xl:inline-flex">
+                <Button
+                  variant="outline"
+                  size="icon-sm"
+                  asChild
+                  className="hidden shrink-0 2xl:inline-flex"
+                >
                   <a
                     href={siteConfig.links.youtube}
                     target="_blank"
@@ -125,7 +137,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 </Button>
               )}
               {siteConfig.links.instagram && (
-                <Button variant="outline" size="icon-sm" asChild className="hidden 2xl:inline-flex">
+                <Button
+                  variant="outline"
+                  size="icon-sm"
+                  asChild
+                  className="hidden shrink-0 2xl:inline-flex"
+                >
                   <a
                     href={siteConfig.links.instagram}
                     target="_blank"
@@ -136,7 +153,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                   </a>
                 </Button>
               )}
-              <Button size="sm" asChild className="hidden md:inline-flex">
+              <Button size="sm" asChild className="hidden shrink-0 md:inline-flex">
                 <a
                   href={siteConfig.links.github}
                   target="_blank"
