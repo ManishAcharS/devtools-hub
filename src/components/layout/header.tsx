@@ -74,8 +74,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         )}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
+          <div className="flex h-16 items-center gap-3">
+            <div className="flex min-w-0 flex-1 items-center gap-2.5">
               <button
                 onClick={() => setMobileOpen(true)}
                 className="text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg p-2 transition-colors lg:hidden"
@@ -86,13 +86,13 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               <Logo />
             </div>
 
-            <DesktopNavigation className="hidden lg:flex" />
+            <DesktopNavigation />
 
-            <div className="flex items-center gap-2">
+            <div className="flex min-w-0 flex-1 items-center justify-end gap-2">
               <button
                 type="button"
                 onClick={openSearch}
-                className="border-border bg-background text-muted-foreground hover:text-foreground focus-within:border-primary/50 focus-within:ring-primary/20 hidden h-9 w-64 items-center gap-3 rounded-xl border px-3 text-sm transition-all focus-within:ring-2 focus-visible:outline-none md:flex"
+                className="border-border bg-background text-muted-foreground hover:text-foreground focus-within:border-primary/50 focus-within:ring-primary/20 hidden h-9 w-64 items-center gap-3 rounded-xl border px-3 text-sm transition-all focus-within:ring-2 focus-visible:outline-none xl:flex"
                 aria-label="Open search"
               >
                 <Search className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
@@ -102,7 +102,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 </kbd>
               </button>
               <ThemeToggle />
-              <Button variant="outline" size="icon-sm" asChild className="hidden sm:inline-flex">
+              <Button variant="outline" size="icon-sm" asChild className="hidden 2xl:inline-flex">
                 <a
                   href={siteConfig.links.github}
                   target="_blank"
@@ -113,7 +113,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 </a>
               </Button>
               {siteConfig.links.youtube && (
-                <Button variant="outline" size="icon-sm" asChild className="hidden sm:inline-flex">
+                <Button variant="outline" size="icon-sm" asChild className="hidden 2xl:inline-flex">
                   <a
                     href={siteConfig.links.youtube}
                     target="_blank"
@@ -125,7 +125,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 </Button>
               )}
               {siteConfig.links.instagram && (
-                <Button variant="outline" size="icon-sm" asChild className="hidden sm:inline-flex">
+                <Button variant="outline" size="icon-sm" asChild className="hidden 2xl:inline-flex">
                   <a
                     href={siteConfig.links.instagram}
                     target="_blank"
@@ -149,7 +149,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               </Button>
               <Link
                 href="/search"
-                className="text-muted-foreground hover:text-foreground hover:bg-muted inline-flex items-center justify-center rounded-lg p-2 transition-colors md:hidden"
+                className="text-muted-foreground hover:text-foreground hover:bg-muted inline-flex items-center justify-center rounded-lg p-2 transition-colors xl:hidden"
                 aria-label="Search"
               >
                 <span className="sr-only">Search</span>

@@ -62,7 +62,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({ className }) => {
                   aria-haspopup={hasMegaMenu ? 'menu' : undefined}
                   onMouseEnter={() => !hasMegaMenu && undefined}
                   className={cn(
-                    'hover-glow inline-flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-medium transition-colors',
+                    'hover-glow inline-flex items-center gap-1 rounded-lg px-2.5 py-2 text-sm font-medium whitespace-nowrap transition-colors',
                     active
                       ? 'text-primary bg-primary/10'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted'

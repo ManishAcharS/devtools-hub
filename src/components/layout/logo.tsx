@@ -38,7 +38,7 @@ const Logo: React.FC<LogoProps> = ({
         <Wrench className={s.icon} aria-hidden="true" />
       </span>
       {showText && (
-        <span className={cn('font-bold tracking-tight', s.text, textColor)}>
+        <span className={cn('font-bold tracking-tight whitespace-nowrap', s.text, textColor)}>
           Toolbox<span className="text-muted-foreground"> for </span>
           <span className="text-primary">Devs</span>
         </span>
