@@ -2,6 +2,7 @@ import React from 'react';
 import { BookOpen } from 'lucide-react';
 import { BlogCard } from '@/components/shared/blog-card';
 import { SectionHeading } from '@/components/shared/section-heading';
+import { EmptyState } from '@/components/shared/empty-state';
 import { getFeaturedPosts } from '@/data';
 import type { BlogPost } from '@/types';
 
@@ -23,14 +24,20 @@ const LatestArticlesSection: React.FC<LatestArticlesSectionProps> = ({
           title={title}
           description={description}
           icon={<BookOpen className="h-6 w-6" aria-hidden="true" />}
-          actionLabel="All posts"
-          actionHref="/blog"
         />
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {posts.map((post) => (
-            <BlogCard key={post.id} post={post} />
-          ))}
-        </div>
+        {posts.length > 0 ? (
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {posts.map((post) => (
+              <BlogCard key={post.id} post={post} />
+            ))}
+          </div>
+        ) : (
+          <EmptyState
+            icon="file"
+            title="Blog coming soon"
+            description="Guides, comparisons, and deep dives from our team are on the way."
+          />
+        )}
       </div>
     </section>
   );

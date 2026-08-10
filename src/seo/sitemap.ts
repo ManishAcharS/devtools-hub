@@ -1,5 +1,5 @@
 import { SITE_URL } from './config';
-import { getAllTools, getAllCategories, getAllPosts, getAllResources } from '@/data';
+import { getAllTools, getAllCategories, getAllPosts } from '@/data';
 
 export type ChangeFrequency =
   'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
@@ -60,11 +60,6 @@ export function getPagesSitemapEntries(): SitemapEntry[] {
     { url: `${SITE_URL}/contact`, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${SITE_URL}/privacy`, changeFrequency: 'yearly', priority: 0.2 },
     { url: `${SITE_URL}/terms`, changeFrequency: 'yearly', priority: 0.2 },
-    ...getAllResources().map((resource): SitemapEntry => ({
-      url: `${SITE_URL}/resources/${resource.slug}`,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    })),
   ];
 }
 

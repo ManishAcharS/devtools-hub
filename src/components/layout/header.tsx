@@ -124,9 +124,16 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                   </a>
                 </Button>
               )}
-              <Button size="sm" className="hidden md:inline-flex">
-                <Star className="h-4 w-4" aria-hidden="true" />
-                Star us
+              <Button size="sm" asChild className="hidden md:inline-flex">
+                <a
+                  href={siteConfig.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Star Toolbox for Devs on GitHub"
+                >
+                  <Star className="h-4 w-4" aria-hidden="true" />
+                  Star us
+                </a>
               </Button>
               <Link
                 href="/search"

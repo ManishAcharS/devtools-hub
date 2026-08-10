@@ -1,6 +1,7 @@
 import React, { forwardRef, type HTMLAttributes } from 'react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { Star, Globe, Github } from 'lucide-react';
+import { Star, Globe, Github, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { ToolIcon } from '@/components/shared/tool-icon';
@@ -37,7 +38,7 @@ const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
         <div
           ref={ref}
           className={cn(
-            'bg-card border-border hover:border-primary/50 flex items-center gap-4 rounded-xl border p-4 transition-all duration-200 hover:shadow-md',
+            'bg-card border-border hover:border-primary/50 group flex items-center gap-4 rounded-xl border p-4 transition-all duration-200 hover:shadow-md',
             className
           )}
           {...props}
@@ -45,7 +46,14 @@ const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
           <ToolIcon name={tool.title} icon={tool.icon} size="sm" />
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
-              <h3 className="text-foreground truncate font-semibold">{tool.title}</h3>
+              <h3 className="text-foreground truncate font-semibold">
+                <Link
+                  href={`/tools/${tool.slug}`}
+                  className="group-hover:text-primary transition-colors"
+                >
+                  {tool.title}
+                </Link>
+              </h3>
             </div>
             <p className="text-muted-foreground mt-1 truncate text-sm">{tool.shortDescription}</p>
             <div className="mt-2 flex flex-wrap items-center gap-1.5">
@@ -96,7 +104,7 @@ const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
         <Card
           ref={ref}
           padding="none"
-          className={cn('hover-lift hover:border-primary/30 flex h-full flex-col', className)}
+          className={cn('hover-lift hover:border-primary/30 group flex h-full flex-col', className)}
           {...props}
         >
           <CardContent className="flex flex-1 flex-col p-4">
@@ -105,7 +113,14 @@ const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
                 <ToolIcon name={tool.title} icon={tool.icon} size="md" />
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-foreground text-xl font-bold text-balance">{tool.title}</h3>
+                    <h3 className="text-foreground text-xl font-bold text-balance">
+                      <Link
+                        href={`/tools/${tool.slug}`}
+                        className="group-hover:text-primary transition-colors"
+                      >
+                        {tool.title}
+                      </Link>
+                    </h3>
                   </div>
                   {showCategory && tool.category && (
                     <span className="text-muted-foreground text-sm">
@@ -150,8 +165,14 @@ const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
             </div>
           </CardContent>
           <CardFooter className="flex flex-wrap gap-2 px-4 pt-0 pb-4">
+            <Button variant="outline" size="sm" asChild>
+              <Link href={`/tools/${tool.slug}`}>
+                <ArrowRight className="mr-1.5 h-3.5 w-3.5" aria-hidden="true" />
+                View details
+              </Link>
+            </Button>
             {tool.website && (
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="ghost" size="sm" asChild>
                 <a href={tool.website} target="_blank" rel="noopener noreferrer">
                   <Globe className="mr-2 h-4 w-4" aria-hidden="true" />
                   Website
@@ -175,7 +196,7 @@ const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
       <Card
         ref={ref}
         padding="none"
-        className={cn('hover-lift hover:border-primary/30 flex h-full flex-col', className)}
+        className={cn('hover-lift hover:border-primary/30 group flex h-full flex-col', className)}
         {...props}
       >
         <CardContent className="flex flex-1 flex-col p-4">
@@ -184,7 +205,14 @@ const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
               <ToolIcon name={tool.title} icon={tool.icon} size="sm" />
               <div className="min-w-0">
                 <div className="flex items-center gap-1">
-                  <h3 className="text-foreground truncate font-semibold">{tool.title}</h3>
+                  <h3 className="text-foreground truncate font-semibold">
+                    <Link
+                      href={`/tools/${tool.slug}`}
+                      className="group-hover:text-primary transition-colors"
+                    >
+                      {tool.title}
+                    </Link>
+                  </h3>
                 </div>
               </div>
             </div>
@@ -217,16 +245,22 @@ const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
             ))}
           </div>
         </CardContent>
-        {tool.website && (
-          <CardFooter className="px-4 pt-0 pb-4">
-            <Button variant="ghost" size="sm" asChild className="w-full">
+        <CardFooter className="gap-2 px-4 pt-0 pb-4">
+          <Button size="sm" asChild className="flex-1">
+            <Link href={`/tools/${tool.slug}`}>
+              <ArrowRight className="mr-1.5 h-3.5 w-3.5" aria-hidden="true" />
+              View details
+            </Link>
+          </Button>
+          {tool.website && (
+            <Button variant="outline" size="sm" asChild className="flex-1">
               <a href={tool.website} target="_blank" rel="noopener noreferrer">
                 <Globe className="mr-1.5 h-4 w-4" aria-hidden="true" />
                 Visit website
               </a>
             </Button>
-          </CardFooter>
-        )}
+          )}
+        </CardFooter>
       </Card>
     );
   }
